@@ -23,150 +23,305 @@
   },
   "home": {
     "hero": {
-      "title": "Building resilient businesses through",
-      "subtitle": "Cybersecurity, Software & AI"
+      "title": "Protecting Businesses Through Smart Cybersecurity & IT Solutions",
+      "subtitle": "Cybersecurity, IT consulting, and practical software solutions for modern organizations"
     },
-    "description": "Gue Cyber delivers cybersecurity, software engineering, AI-assisted automation, web and intranet systems, cloud and DevOps solutions, enterprise IT training, technical support, and tech procurement.",
-    "stat1": "Business Roots Since",
-    "stat2": "Client Delivery Approach",
-    "stat3": "Core Capability Pillars",
-    "stat4": "Cyber, Software and AI Service Lines",
+    "heroDescription": "GUE CYBER delivers practical cybersecurity, IT consulting, and software support to help organizations operate securely and confidently.",
+    "tagline": "We provide cybersecurity audits, secure development, and managed IT security services.",
+    "description": "Gue Cyber delivers software programming, computer consultancy, and other IT and computer services for your business.",
+    "stat1": "Branch Unit Number",
+    "stat2": "Status",
+    "stat3": "Branch Units",
+    "stat4": "Start Date",
     "capability1": {
-      "title": "Cybersecurity & Governance",
-      "text": "Assessment, hardening, monitoring, incident readiness, and governance support for resilient operations."
+      "title": "Computer Programming",
+      "text": "Design and build business software, web applications, internal tools, and automation workflows."
     },
     "capability2": {
-      "title": "Software & Cloud Engineering",
-      "text": "Custom development, secure APIs, cloud architecture, DevOps, and infrastructure modernization for scalable operations."
+      "title": "Computer Consultancy",
+      "text": "Provide IT planning, technical advisory, and guidance for systems and computer facilities."
     },
     "capability3": {
-      "title": "AI & Automation Enablement",
-      "text": "AI-assisted workflows, automation, and knowledge tools that improve speed, consistency, and decision-making."
+      "title": "Other IT & Computer Services",
+      "text": "Deliver support, maintenance, system administration, and general IT services for businesses."
     },
-    "capability4": {
-      "title": "Technology Operations Support",
-      "text": "Enterprise IT support, procurement advisory, and operational enablement to keep teams secure and productive."
+    "whyChooseUs": {
+      "title": "Why Choose GUE CYBER",
+      "reason1": {
+        "title": "What We Do",
+        "text": "We deliver practical software, consultancy, and IT services designed for business results."
+      },
+      "reason2": {
+        "title": "Business-Oriented",
+        "text": "Solutions designed around practical delivery, clarity, and measurable value."
+      },
+      "reason3": {
+        "title": "Modern Delivery",
+        "text": "Clear communication and dependable delivery from first contact to handover."
+      },
+      "reason4": {
+        "title": "Responsive Support",
+        "text": "Reliable technical assistance when businesses need it most."
+      }
     },
-    "testimonial1": {
-      "text": "Gue Cyber helped us reduce platform risk while improving release speed. Their security and DevOps guidance was practical and immediately useful.",
-      "author": "Engineering Director"
+    "industries": {
+      "title": "Industries We Support",
+      "list": [
+        "Small Businesses",
+        "Schools & Educational Institutions",
+        "Startups & Growing Companies",
+        "NGOs & Organizations",
+        "Professional Services",
+        "Retail & Hospitality"
+      ]
+    },
+      "testimonial1": {
+        "text": "Gue Cyber helped us reduce platform risk while improving release speed. Their security and DevOps guidance was practical and immediately useful.",
+        "author": "Engineering Director"
     },
     "testimonial2": {
       "text": "From architecture planning to implementation support, the team delivered clear direction and measurable improvements across our digital operations.",
       "author": "CTO"
     },
-    "faqIntro": "From cybersecurity and software engineering to AI-powered automation, we partner with organizations to solve real business and technology challenges.",
+    "faqIntro": "From software programming to computer consultancy and other IT services, we help organizations solve practical technology challenges.",
     "faqTitle": "Frequently Asked Questions",
-    "faqDescription": "Here you will find clear answers to common questions about cybersecurity, software engineering, AI, and our delivery approach.",
+    "faqDescription": "Here you will find clear answers to common questions about our services and how we work.",
     "cta": {
-      "title": "Ready to strengthen your business technology foundation?",
-      "description": "Speak with our team to design a practical roadmap across cybersecurity, software engineering, AI, cloud, and IT operations."
+      "title": "Need software or IT support?",
+      "description": "Whether you need software programming, computer consultancy, or other IT and computer services, GUE CYBER can help.",
+      "button1": "Get Free Consultation",
+      "button2": "Contact Us"
+    },
+    "tiles": {
+      "tile1": { "title": "Belgium-based", "text": "Local support and compliance knowledge for Belgian organisations." },
+      "tile2": { "title": "Free basic security assessment", "text": "Request a concise review to uncover obvious gaps and next steps." },
+      "tile3": { "title": "Small-business specialist", "text": "Practical, low-friction security and IT services for small teams." },
+      "tile4": { "title": "Transparent deliverables", "text": "Clear reports, timelines, and realistic recommendations — no surprises." }
     }
   },
   "about": {
     "hero": {
-      "title": "Building resilient organizations through cyber, software, and AI."
+      "title": "Software Programming and IT Services"
     },
-    "description": "Our company evolved from a registered ICT business into a broader cyber business focused on secure, practical technology delivery across cybersecurity, software engineering, and AI.",
-    "aboutTitle": "About us",
-    "aboutText": "Our company evolved from a registered ICT business into a broader cyber business focused on secure, practical technology delivery for organizations across cybersecurity, software engineering, and AI.",
-    "stat1": "Global",
-    "stat1Label": "Cross-border delivery mindset",
-    "stat2": "Secure",
-    "stat2Label": "Security-first engineering",
-    "stat3": "AI",
-    "stat3Label": "Automation and innovation",
+    "description": "GUE CYBER was founded to deliver software programming, computer consultancy, and other IT and computer services to businesses that want practical support.",
+    "aboutTitle": "About Us",
+    "aboutText": "We are a Belgian technology business focused on software programming, computer consultancy, and other IT and computer services.",
+    "mission": "Our Mission",
+    "missionText": "To help organizations operate efficiently through practical software and IT services delivered clearly and professionally.",
+    "values": "Our Values",
+    "stat1": "Professional",
+    "stat1Label": "Clear delivery",
+    "stat2": "Reliable",
+    "stat2Label": "Practical support",
+    "stat3": "Reliable",
+    "stat3Label": "Trusted technical support",
     "value1": {
-      "title": "Business-First Technology",
-      "text": "We align cybersecurity and engineering decisions to measurable business outcomes."
+      "title": "Trust & Professionalism",
+      "text": "We build long-term relationships based on clarity, professionalism, and dependable delivery."
     },
     "value2": {
-      "title": "Integrated Service Delivery",
-      "text": "From software development to technical support, we deliver complete solutions across the IT lifecycle."
+      "title": "Business-Oriented Solutions",
+      "text": "We focus on outcomes that matter: useful software, workable advice, and dependable support."
     },
     "value3": {
-      "title": "AI-Ready Capability Development",
-      "text": "We build long-term internal strength through enterprise training, advisory, and responsible AI adoption support."
+      "title": "Responsive & Reliable",
+      "text": "We provide responsive support and technical discipline to keep work moving forward."
     }
   },
   "services": {
     "hero": {
-      "title": "Cybersecurity, software engineering, and AI solutions aligned to operations and growth goals."
+      "title": "Software Programming and IT Services"
     },
-    "description": "Every engagement is tailored to your business context with clear outcomes and practical implementation.",
+    "description": "Our current activities are software programming, computer consultancy, and other IT and computer services.",
+    "cyberTitle": "Cybersecurity Capabilities",
+    "cyberline": "We deliver cybersecurity services as part of our computer consultancy and IT service offerings. Typical capabilities include:",
+    "cyberItems": [
+      "Security audits & vulnerability assessments",
+      "Incident response & remediation",
+      "Endpoint protection & patching",
+      "Network security & hardening",
+      "Security awareness training",
+      "Monitoring & basic managed security"
+    ],
     "service1": {
-      "title": "Cybersecurity & Governance",
+      "title": "Computer Programming",
       "items": [
-        "Infrastructure and application penetration testing",
-        "Vulnerability assessment and remediation planning",
-        "OSINT and social engineering simulation",
-        "Executive and technical risk reporting"
+        "Design and development of business software",
+        "Web applications and internal tools",
+        "API and system integration",
+        "Automation and workflow tooling"
       ]
     },
     "service2": {
-      "title": "Software & Cloud Engineering",
+      "title": "Computer Consultancy & Facility Management",
       "items": [
-        "Custom applications and API development",
-        "Cloud architecture and migration planning",
-        "Infrastructure hardening and observability",
-        "CI/CD, DevOps, and automation"
+        "IT planning and technical advisory",
+        "Managing computer facilities and environments",
+        "Business systems support and deployment",
+        "Ongoing operational guidance"
       ]
     },
     "service3": {
-      "title": "AI & Automation Enablement",
+      "title": "Other IT & Computer Services",
       "items": [
-        "AI use-case discovery and solution planning",
-        "LLM integration and prompt engineering",
-        "Enterprise AI training and capability programs",
-        "Responsible AI governance frameworks"
+        "Technical support and maintenance",
+        "System administration and user support",
+        "Cloud and infrastructure assistance",
+        "General IT service delivery"
       ]
     },
     "service4": {
       "title": "Technology Procurement",
       "items": [
         "Technology sourcing and vendor advisory",
-        "RFP preparation and evaluation",
-        "Procurement planning for scale and continuity",
-        "Cost optimization and license management"
+        "Hardware and software procurement",
+        "Commercial comparisons and selection",
+        "Procurement planning and optimization"
       ]
     },
-    "processTitle": "Our IT delivery approach",
+    "processTitle": "How We Work",
+    "processDescription": "A simple delivery flow keeps projects clear, practical, and easy to follow.",
     "step1": "01",
     "step1Title": "Discover",
-    "step1Text": "Understand your systems, operations, constraints, and opportunities across the IT landscape.",
+    "step1Text": "Understand your systems, goals, and operational needs before any solution is proposed.",
     "step2": "02",
     "step2Title": "Design",
-    "step2Text": "Co-design a practical roadmap across cybersecurity, software, cloud, AI, and support priorities.",
+    "step2Text": "Shape a practical delivery plan around software, consultancy, and support priorities.",
     "step3": "03",
     "step3Title": "Deliver",
-    "step3Text": "Implement secure, reliable solutions across applications, infrastructure, workflows, and service operations.",
+    "step3Text": "Build, configure, or improve the solution with clear milestones and communication.",
     "step4": "04",
-    "step4Title": "Scale",
-    "step4Text": "Measure outcomes, improve continuously, and scale proven practices across teams and departments.",
+    "step4Title": "Support",
+    "step4Text": "Review outcomes, refine the work, and support the next phase when needed.",
     "cta": {
-      "title": "Ready to transform your operations?",
-      "description": "Speak with our team to shape an outcome-driven roadmap across security, software engineering, AI, cloud, and IT operations."
-    }
+      "title": "Need software or IT support?",
+      "description": "Talk to us about software design, computer consultancy, or other IT and computer services aligned to your business needs."
+    },
+    "packagesTitle": "Cybersecurity Service Packages",
+    "packagesIntro": "Flexible packages for small businesses and growing organizations.",
+    "starter": {
+      "name": "Starter Security Package",
+      "price": "€149 – €299/month",
+      "description": "For small businesses.",
+      "items": [
+        "Antivirus management",
+        "Basic endpoint security",
+        "Security updates",
+        "Backup verification",
+        "Monthly health check"
+      ]
+    },
+    "business": {
+      "name": "Business Protection Package",
+      "price": "€499 – €999/month",
+      "description": "For businesses that need stronger monitoring and reporting.",
+      "items": [
+        "Vulnerability scans",
+        "Endpoint monitoring",
+        "Security hardening",
+        "Email security",
+        "Backup monitoring",
+        "Security reporting"
+      ]
+    },
+    "managed": {
+      "name": "Managed Cybersecurity Package",
+      "price": "€1,500+/month",
+      "description": "For organizations that want ongoing protection and incident response support.",
+      "items": [
+        "Continuous monitoring",
+        "Threat detection",
+        "Incident response",
+        "Infrastructure security",
+        "Compliance assistance",
+        "Managed cybersecurity support"
+      ]
+    },
+    "oneTimeTitle": "One-Time Services",
+    "seoTitle": "SEO Content Strategy",
+    "seoPagesTitle": "Recommended SEO Pages",
+    "seoPages": [
+      "Cybersecurity Services Belgium",
+      "Managed IT Services Belgium",
+      "Small Business Cybersecurity",
+      "Vulnerability Assessment Services",
+      "IT Support Avelgem",
+      "Cloud Security Solutions"
+    ],
+    "blogTitle": "Blog Content Ideas",
+    "blogCybersecurity": [
+      "How Small Businesses Get Hacked",
+      "Phishing Attacks Explained",
+      "Ransomware Prevention Guide",
+      "How to Secure Microsoft 365"
+    ],
+    "blogBusinessIt": [
+      "Best Backup Solutions for Small Businesses",
+      "Why Businesses Need Cybersecurity",
+      "How to Protect Business Data"
+    ],
+    "keywordsTitle": "Best SEO Keywords",
+    "keywords": [
+      "cybersecurity Belgium",
+      "IT consulting Belgium",
+      "cybersecurity services Belgium",
+      "small business cybersecurity",
+      "managed IT services Belgium",
+      "cybersecurity for schools",
+      "business IT support Belgium"
+    ],
+    "designTitle": "Complete Modern Design Direction",
+    "styleTitle": "Style",
+    "styleItems": [
+      "Modern",
+      "Clean",
+      "Enterprise-level",
+      "Minimal but premium"
+    ],
+    "paletteTitle": "Recommended Color Palette",
+    "palettePrimary": [
+      "Dark navy",
+      "Deep blue",
+      "White"
+    ],
+    "paletteAccent": [
+      "Cyan",
+      "Electric blue"
+    ],
+    "avoidTitle": "Avoid",
+    "avoidItems": [
+      "Neon hacker green",
+      "Excessive black/red combinations",
+      "Overly hacker aesthetics"
+    ]
   },
   "contact": {
-    "title": "Contact us",
-    "subtitle": "We are here to help you make a first move to greener choice.",
+    "title": "Get in Touch",
+    "subtitle": "Contact GUE CYBER for cybersecurity and IT solutions.",
     "fullName": "Full Name",
     "email": "Email",
+    "phone": "Phone",
     "company": "Company",
     "company_optional": "(optional)",
-    "service": "Service",
-    "selectService": "Select service",
+    "service": "Service Interested In",
+    "selectService": "Select a service",
     "assessment": "Security Assessment",
-    "cloud": "Cloud Hardening",
-    "incident": "Incident Response",
-    "advisory": "Advisory & Governance",
+    "consulting": "Cybersecurity Consulting",
+    "itSupport": "IT Support",
+    "cloudServices": "Cloud Services",
+    "other": "Other",
     "message": "Message",
-    "privacyConsent": "I agree to the processing of my details for this enquiry and confirm I have read the",
+    "privacyConsent": "I agree to the processing of my details and confirm I have read the",
     "privacyLink": "Privacy Policy",
-    "privacyNote": "We use your details only to respond to your request, manage the relationship, and meet legal obligations.",
+    "privacyNote": "We use your details only to respond to your request and manage our relationship.",
     "consentRequired": "Please agree to the Privacy Policy before submitting.",
-    "success": "Thanks. Your request has been submitted. Our team will contact you shortly."
+    "success": "Thanks. Your request has been received. Our team will contact you shortly."
+  },
+  "assessment": {
+    "title": "Free Basic Security Assessment",
+    "subtitle": "Request a concise, no-cost review to uncover obvious gaps and next steps.",
+    "button": "Request Assessment",
+    "thanks": "Thanks — we received your request. We'll contact you shortly to schedule the assessment."
   },
   "careers": {
     "job1Title": "Security Engineer",
@@ -214,23 +369,42 @@
     }
   },
   "faq": {
-    "q1": "What services does Gue Cyber provide?",
-    "a1": "Gue Cyber provides cyber security, digital transformation and infrastructure services for MSMEs and enterprises. We offer vulnerability assessments, infrastructure hardening, secure migrations and training to improve resilience.",
-    "q2": "Do you provide security training and incident response exercises?",
-    "a2": "Yes — we provide security awareness, tabletop incident response exercises and hands-on technical training like secure coding and log analysis to build internal security capabilities.",
-    "q3": "Can you help us adopt AI responsibly?",
-    "a3": "Yes — we help teams identify practical AI use cases, define governance guardrails, and introduce automation responsibly so AI supports operations without increasing risk.",
-    "q4": "Do you support distributed or remote teams?",
-    "a4": "Yes, we operate a distributed model to support clients globally — combining remote security monitoring with on-site consulting when required to harden critical infrastructure."
+    "q1": "What cybersecurity services does GUE CYBER provide?",
+    "a1": "We provide comprehensive cybersecurity services including security audits, vulnerability assessments, endpoint protection, network security, security awareness training, and incident response planning for businesses of all sizes.",
+    "q2": "Do you support small businesses?",
+    "a2": "Yes — we specialize in cybersecurity and IT solutions for small businesses, schools, startups, NGOs, and organizations. We provide affordable, scalable security packages tailored to your budget and needs.",
+    "q3": "What IT services do you offer?",
+    "a3": "We offer IT consulting, computer systems setup, cloud services, backup solutions, Microsoft 365 security setup, and managed IT support to keep your operations running smoothly.",
+    "q4": "How do I get a security assessment?",
+    "a4": "Contact us through our website or call us for a free consultation. We offer security assessments to identify vulnerabilities before attackers do and provide actionable recommendations."
   },
   "footer": {
     "platform": "Platform",
     "resources": "Resources",
     "company": "Company",
-    "description": "We help organizations build resilient digital operations through cybersecurity, software engineering, cloud and DevOps, IT consulting, and technology enablement.",
+    "description": "Cybersecurity & IT solutions for small businesses, schools, organizations, and growing companies in Belgium and internationally. Cybersecurity audits, incident response, and managed IT security — practical services for business continuity.",
     "newsletter": "Your source for cyber business updates",
-    "newsletterDesc": "Join our monthly brief with concise insights on cybersecurity, cloud, software delivery, and operational resilience.",
+    "newsletterDesc": "Join our monthly brief with concise insights on cybersecurity, IT support, business continuity, and digital transformation.",
     "email": "you@company.com",
+    "registrationUnit": "Branch unit: GUE CYBER",
+    "registrationNumber": "Branch unit number: 2.388.233.238",
+    "businessNumber": "Enterprise number: 1037.163.392",
+    "contact": {
+      "email": "info@guecyber.com",
+      "emailSecure": "security@guecyber.com",
+      "address": "Doorniksesteenweg 3B bus 101, 8580 Avelgem",
+      "linkedin": "LinkedIn",
+      "branchUnit": "Vestigingseenheid: GUE CYBER",
+      "branchUnitNumber": "Nummer vestigingseenheid: 2.388.233.238",
+      "enterpriseNumber": "Ondernemingsnummer: 1037.163.392",
+      "since": "Sinds 1 mei 2026",
+      "status": "Status: Actief"
+    },
+    "business": {
+      "enterprise": "Enterprise Number",
+      "registration": "Belgian Registration",
+      "compliance": "ISO & Compliance Ready"
+    },
     "form": {
       "consent": "I agree to receive updates and confirm I have read the",
       "emailRequired": "Please enter your email address.",

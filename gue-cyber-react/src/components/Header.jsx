@@ -1,4 +1,4 @@
-import logo from "../assets/logo.webp";
+import logo from "../assets/logo.png";
 import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { IconButton, Drawer, List, ListItemButton, ListItemText, Box, Button, Stack } from "@mui/material";
@@ -23,8 +23,8 @@ export default function Header() {
 
     const navLinks = [
         { to: "/", label: t('common.home') },
-        { to: "/about", label: t('common.about') },
         { to: "/services", label: t('common.services') },
+        { to: "/about", label: t('common.about') },
         { to: "/contact", label: t('common.contact') },
     ];
 
@@ -99,7 +99,7 @@ export default function Header() {
                                 borderRadius: '12px',
                                 px: { xs: 0.7, md: 0.9 },
                                 py: { xs: 0.35, md: 0.45 },
-                                background: faunaHeroMode ? 'transparent' : '#022c22',
+                                background: '#a3e635',
                                 boxShadow: faunaHeroMode ? 'none' : '0 8px 16px rgba(2,44,34,0.18)',
                                 transition: 'all 0.25s ease',
                             }}

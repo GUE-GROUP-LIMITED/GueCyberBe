@@ -123,9 +123,10 @@ export default function Contact() {
                   >
                     <option value="">{t('contact.selectService')}</option>
                     <option value="assessment">{t('contact.assessment')}</option>
-                    <option value="cloud">{t('contact.cloud')}</option>
-                    <option value="incident">{t('contact.incident')}</option>
-                    <option value="advisory">{t('contact.advisory')}</option>
+                    <option value="consulting">{t('contact.consulting')}</option>
+                    <option value="itSupport">{t('contact.itSupport')}</option>
+                    <option value="cloud">{t('contact.cloudServices')}</option>
+                    <option value="other">{t('contact.other')}</option>
                   </select>
                   {errors.service ? <p className="contact-error">{errors.service}</p> : null}
                 </div>

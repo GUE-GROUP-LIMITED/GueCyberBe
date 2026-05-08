@@ -23,29 +23,28 @@
   },
   "home": {
     "hero": {
-      "title": "Créez des entreprises résilientes par",
-      "subtitle": "Cybersécurité, Logiciels & IA"
+      "title": "Protéger les entreprises grâce à des solutions intelligentes de cybersécurité et d'informatique",
+      "subtitle": "Cybersécurité, conseil informatique et solutions logicielles pratiques pour les organisations modernes"
     },
-    "description": "Gue Cyber offre des services de cybersécurité, d'ingénierie logicielle, d'automatisation assistée par l'IA, de systèmes web et intranet, de solutions cloud et DevOps, de formation informatique d'entreprise, de support technique et d'approvisionnement technologique.",
-    "stat1": "Fondations de l'entreprise depuis",
-    "stat2": "Approche de livraison client",
-    "stat3": "Piliers de capacités clés",
-    "stat4": "Lignes de services cyber, logiciel et IA",
+    "heroDescription": "GUE CYBER fournit des services pratiques de cybersécurité, de conseil informatique et de développement logiciel pour aider les organisations à fonctionner en toute sécurité et en confiance.",
+    "tagline": "Nous réalisons des audits de cybersécurité, du développement sécurisé et des services de sécurité managés.",
+    "description": "GUE CYBER fournit la programmation logicielle, le conseil informatique et d'autres services IT et informatiques pour votre entreprise.",
+    "tagline": "Audits de cybersécurité, réponse aux incidents et sécurité managée — services pratiques pour la continuité métier.",
+    "stat1": "Numéro d'unité d'établissement",
+    "stat2": "Statut",
+    "stat3": "Unités",
+    "stat4": "Date de début",
     "capability1": {
-      "title": "Cybersécurité & Gouvernance",
-      "text": "Évaluation, renforcement, surveillance, préparation aux incidents et support de gouvernance pour des opérations résilientes."
+      "title": "Programmation informatique",
+      "text": "Conception et développement de logiciels métiers, applications web, outils internes et automatisation."
     },
     "capability2": {
-      "title": "Ingénierie logicielle & cloud",
-      "text": "Développement personnalisé, API sécurisées, architecture cloud, DevOps et modernisation infrastructure pour des opérations évolutives."
+      "title": "Conseil informatique",
+      "text": "Planification IT, conseil technique et accompagnement des systèmes et des parcs informatiques."
     },
     "capability3": {
-      "title": "Activation de l'IA & Automatisation",
-      "text": "Flux de travail assistés par l'IA, automatisation et outils de connaissance qui améliorent la vitesse, la cohérence et la prise de décision."
-    },
-    "capability4": {
-      "title": "Support des operations technologiques",
-      "text": "Support informatique d'entreprise, conseil en approvisionnement et soutien operationnel pour garder les equipes securisees et productives."
+      "title": "Autres services IT et informatiques",
+      "text": "Support, maintenance, administration des systèmes et services IT généraux pour les entreprises."
     },
     "testimonial1": {
       "text": "Gue Cyber nous a aidés à réduire les risques de plateforme tout en améliorant la vitesse de publication. Leurs conseils en cybersécurité et DevOps étaient pratiques et immédiatement utiles.",
@@ -55,70 +54,88 @@
       "text": "De la planification architecturale au support d'implémentation, l'équipe a fourni une direction claire et des améliorations mesurables dans nos opérations numériques.",
       "author": "CTO"
     },
-    "faqIntro": "De la cybersécurité et l'ingénierie logicielle à l'automatisation assistée par l'IA, nous nous associons à des organisations pour résoudre de véritables défis commerciaux et technologiques.",
+    "faqIntro": "De la programmation logicielle au conseil informatique et aux autres services IT, nous aidons les organisations à résoudre des défis technologiques pratiques.",
     "faqTitle": "Questions fréquemment posées",
-    "faqDescription": "Vous trouverez ici des réponses claires aux questions courantes sur la cybersécurité, l'ingénierie logicielle, l'IA et notre approche de livraison.",
+    "faqDescription": "Vous trouverez ici des réponses claires sur nos services et notre manière de travailler.",
     "cta": {
-      "title": "Prêt à renforcer la base de votre technologie d'entreprise?",
-      "description": "Parlez à notre équipe pour concevoir une feuille de route pratique couvrant la cybersécurité, l'ingénierie logicielle, l'IA, le cloud et les opérations informatiques."
+      "title": "Besoin d'un support logiciel ou informatique?",
+      "description": "Que vous ayez besoin de programmation logicielle, de conseil informatique ou d'autres services IT et informatiques, GUE CYBER peut vous aider.",
+      "button1": "Obtenir une consultation gratuite",
+      "button2": "Nous contacter"
+    },
+    "tiles": {
+      "tile1": { "title": "Basé en Belgique", "text": "Support local et connaissance de la conformité pour les organisations belges." },
+      "tile2": { "title": "Évaluation de sécurité gratuite", "text": "Demandez un examen concis pour identifier les lacunes évidentes et les étapes suivantes." },
+      "tile3": { "title": "Spécialiste PME", "text": "Services de cybersécurité et IT pratiques et légers pour les petites équipes." },
+      "tile4": { "title": "Livrables transparents", "text": "Rapports clairs, calendriers et recommandations réalistes — sans surprise." }
     }
   },
   "about": {
     "hero": {
-      "title": "Créez des organisations résilientes par la cyber, les logiciels et l'IA."
+      "title": "Services de programmation logicielle et informatique"
     },
-    "description": "Notre entreprise a évolué d'une entreprise TIC enregistrée vers une entreprise cybernétique plus large axée sur la livraison technologique sécurisée et pratique en cybersécurité, ingénierie logicielle et IA.",
+    "description": "GUE CYBER a été créée pour fournir des services pratiques de programmation logicielle, de conseil informatique et d'autres services IT et informatiques.",
     "aboutTitle": "À propos de nous",
-    "aboutText": "Notre entreprise a évolué d'une entreprise TIC enregistrée vers une entreprise cybernétique plus large axée sur la livraison technologique sécurisée et pratique pour les organisations en cybersécurité, ingénierie logicielle et IA.",
+    "aboutText": "Nous sommes une entreprise technologique belge spécialisée dans la programmation logicielle, le conseil informatique et les autres services IT et informatiques.",
     "stat1": "Mondial",
-    "stat1Label": "Mentalité de livraison transfrontalière",
-    "stat2": "Sécurisé",
-    "stat2Label": "Ingénierie centrée sur la sécurité",
-    "stat3": "IA",
-    "stat3Label": "Automatisation et innovation",
+    "stat1Label": "Livraison claire",
+    "stat2": "Fiable",
+    "stat2Label": "Support pratique",
+    "stat3": "Réactif",
+    "stat3Label": "Soutien technique de confiance",
     "value1": {
-      "title": "Technologie axée sur l'entreprise",
-      "text": "Nous alignons les décisions de cybersécurité et d'ingénierie sur des résultats commerciaux mesurables."
+      "title": "Confiance & Professionnalisme",
+      "text": "Nous bâtissons des relations durables fondées sur la clarté, le professionnalisme et une livraison fiable."
     },
     "value2": {
-      "title": "Livraison de services intégrés",
-      "text": "Du développement logiciel au support technique, nous offrons des solutions complètes dans le cycle de vie informatique."
+      "title": "Solutions orientées métier",
+      "text": "Nous nous concentrons sur des résultats utiles : logiciels pratiques, conseils exploitables et support fiable."
     },
     "value3": {
-      "title": "Développement des capacités prêtes pour l'IA",
-      "text": "Nous renforçons la force interne à long terme par la formation d'entreprise, les conseils et le support d'adoption responsable de l'IA."
+      "title": "Réactif & Fiable",
+      "text": "Nous fournissons un support réactif et une discipline technique pour faire avancer le travail."
     }
   },
   "services": {
     "hero": {
-      "title": "Solutions de cybersécurité, d'ingénierie logicielle et d'IA alignées aux opérations et aux objectifs de croissance."
+      "title": "Services de programmation logicielle et informatique"
     },
-    "description": "Chaque engagement est adapté à votre contexte commercial avec des résultats clairs et une implémentation pratique.",
+    "description": "Nos activités actuelles sont la programmation logicielle, le conseil informatique et les autres services IT et informatiques.",
+    "cyberTitle": "Capacités de cybersécurité",
+    "cyberline": "Nous proposons des services de cybersécurité dans le cadre de notre offre de conseil informatique et de services IT. Nos capacités typiques comprennent :",
+    "cyberItems": [
+      "Audits de sécurité et évaluations de vulnérabilité",
+      "Réponse aux incidents et remédiation",
+      "Protection des endpoints et gestion des correctifs",
+      "Sécurité réseau et durcissement",
+      "Formation de sensibilisation à la sécurité",
+      "Supervision et sécurité gérée de base"
+    ],
     "service1": {
-      "title": "Cybersécurité & Gouvernance",
+      "title": "Programmation informatique",
       "items": [
-        "Tests de pénétration infrastructure et applications",
-        "Évaluation des vulnérabilités et planification de remédiation",
-        "Simulation OSINT et ingénierie sociale",
-        "Rapports exécutifs et techniques des risques"
+        "Conception et développement de logiciels métiers",
+        "Applications web et outils internes",
+        "Intégration d'API et de systèmes",
+        "Automatisation et outils de flux de travail"
       ]
     },
     "service2": {
-      "title": "Ingénierie logicielle & cloud",
+      "title": "Conseil informatique et gestion de parcs informatiques",
       "items": [
-        "Développement d'applications et d'API personnalisés",
-        "Planification d'architecture et de migration cloud",
-        "Renforcement infrastructure et observabilité",
-        "CI/CD, DevOps et automatisation"
+        "Planification informatique et conseil technique",
+        "Gestion des environnements et des parcs informatiques",
+        "Support des systèmes métiers et du déploiement",
+        "Accompagnement opérationnel continu"
       ]
     },
     "service3": {
-      "title": "Activation de l'IA & Automatisation",
+      "title": "Autres services informatiques et liés à l'informatique",
       "items": [
-        "Découverte des cas d'usage IA et planification de solutions",
-        "Intégration LLM et prompt engineering",
-        "Formation et programmes de capacité en IA d'entreprise",
-        "Cadres de gouvernance pour une IA responsable"
+        "Support technique et maintenance",
+        "Administration des systèmes et assistance aux utilisateurs",
+        "Assistance cloud et infrastructure",
+        "Livraison générale de services IT"
       ]
     },
     "service4": {
@@ -130,22 +147,23 @@
         "Optimisation des coûts et gestion des licences"
       ]
     },
-    "processTitle": "Notre approche de livraison IT",
+    "processTitle": "Notre manière de travailler",
+    "processDescription": "Un processus simple garde les projets clairs, pratiques et faciles à suivre.",
     "step1": "01",
     "step1Title": "Découvrir",
-    "step1Text": "Comprenez vos systèmes, opérations, contraintes et opportunités sur l'ensemble du paysage IT.",
+    "step1Text": "Comprendre vos systèmes, vos objectifs et vos besoins opérationnels avant de proposer une solution.",
     "step2": "02",
     "step2Title": "Concevoir",
-    "step2Text": "Co-concevez une feuille de route pratique couvrant la cybersécurité, les logiciels, le cloud, l'IA et le support.",
+    "step2Text": "Définir un plan de livraison pratique autour des logiciels, du conseil et du support.",
     "step3": "03",
     "step3Title": "Livrer",
-    "step3Text": "Implémentez des solutions sûres et fiables pour les applications, l'infrastructure, les workflows et les opérations de service.",
+    "step3Text": "Construire, configurer ou améliorer la solution avec des étapes claires et une communication régulière.",
     "step4": "04",
-    "step4Title": "Déployer à l'échelle",
-    "step4Text": "Mesurez les résultats, améliorez en continu et étendez les pratiques éprouvées entre équipes et départements.",
+    "step4Title": "Soutenir",
+    "step4Text": "Examiner les résultats, affiner le travail et accompagner la phase suivante si nécessaire.",
     "cta": {
-      "title": "Prêt à transformer vos opérations?",
-      "description": "Parlez à notre équipe pour concevoir une feuille de route axée sur les résultats couvrant la sécurité, l'ingénierie logicielle, l'IA, le cloud et les opérations informatiques."
+      "title": "Besoin d'un support logiciel ou informatique?",
+      "description": "Parlez-nous de conception logicielle, de conseil informatique ou d'autres services IT adaptés à votre activité."
     }
   },
   "contact": {
@@ -167,6 +185,12 @@
     "privacyNote": "Nous utilisons vos données uniquement pour répondre à votre demande, gérer la relation et respecter les obligations légales.",
     "consentRequired": "Veuillez accepter la politique de confidentialité avant de soumettre.",
     "success": "Merci. Votre demande a été soumise. Notre équipe vous contactera bientôt."
+  },
+  "assessment": {
+    "title": "Évaluation de sécurité de base gratuite",
+    "subtitle": "Demandez une revue concise et gratuite pour identifier les failles visibles et les prochaines étapes.",
+    "button": "Demander une évaluation",
+    "thanks": "Merci — nous avons bien reçu votre demande. Nous vous contacterons bientôt pour planifier l'évaluation."
   },
   "careers": {
     "job1Title": "Ingénieur en sécurité",
@@ -227,10 +251,13 @@
     "platform": "Plateforme",
     "resources": "Ressources",
     "company": "Entreprise",
-    "description": "Nous aidons les organisations à construire des opérations numériques résilientes par la cybersécurité, l'ingénierie logicielle, le cloud et DevOps, la consultation informatique et la capacité technologique.",
+    "description": "Solutions de cybersécurité et informatique pour les petites entreprises, écoles, organisations et entreprises en croissance en Belgique et à l'international. Audits de cybersécurité, réponse aux incidents et sécurité informatique managée — services pratiques pour la continuité métier.",
     "newsletter": "Votre source pour les mises à jour cyber business",
     "newsletterDesc": "Rejoignez notre bulletin mensuel avec des perspectives sur la cybersécurité, le cloud, la livraison logicielle et la résilience opérationnelle.",
     "email": "vous@entreprise.fr",
+    "registrationUnit": "Unité d'établissement : GUE CYBER",
+    "registrationNumber": "Numéro d'unité d'établissement : 2.388.233.238",
+    "businessNumber": "Numéro d'entreprise : 1037.163.392",
     "form": {
       "consent": "J'accepte de recevoir des mises à jour et je confirme avoir lu la",
       "emailRequired": "Veuillez saisir votre adresse e-mail.",

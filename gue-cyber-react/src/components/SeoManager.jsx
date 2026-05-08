@@ -9,9 +9,9 @@ const DEFAULT_IMAGE = "/img/gue (5).jpg";
 
 const routeMeta = {
   "/": {
-    title: "Gue Cyber | Cybersecurity, Software Engineering and AI",
+    title: "Gue Cyber | Cybersecurity & IT Solutions",
     description:
-      "Cybersecurity, software engineering, AI automation, intranet solutions, cloud and DevOps, IT consulting, training, and tech procurement for resilient organizations.",
+      "Gue Cyber provides practical cybersecurity, IT consulting and software solutions to help small and medium businesses operate securely and reliably.",
   },
   "/about": {
     title: "About | Gue Cyber",

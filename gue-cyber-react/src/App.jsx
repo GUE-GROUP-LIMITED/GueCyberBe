@@ -12,9 +12,11 @@ import Footer from "./components/Footer";
 import CookieConsentBanner from "./components/CookieConsentBanner";
 import SeoManager from "./components/SeoManager";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import Assessment from "./pages/Assessment";
+import Blog from "./pages/Blog";
+import About from "./pages/About";
 const Careers = lazy(() => import('./pages/Careers'));
 // Removed unused service page imports
 
@@ -27,10 +29,10 @@ const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#022c22',
+      main: '#0f2747',
     },
     secondary: {
-      main: '#a3e635',
+      main: '#22d3ee',
     },
     background: {
       default: '#f8fafc',
@@ -75,7 +77,7 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          background: 'radial-gradient(900px 420px at 0% -5%, rgba(22,163,74,0.07), transparent 52%), radial-gradient(900px 380px at 100% 0%, rgba(15,23,42,0.05), transparent 60%), #f8fafc',
+          background: 'radial-gradient(900px 420px at 0% -5%, rgba(34,211,238,0.08), transparent 52%), radial-gradient(900px 380px at 100% 0%, rgba(15,39,71,0.06), transparent 60%), #f8fafc',
         },
       },
     },
@@ -107,11 +109,13 @@ function App() {
             <main id="main" tabIndex={-1}>
               <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/careers" element={<Careers />} />
-              <Route path="/blog" element={<Navigate to="/services" replace />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/assessment" element={<Assessment />} />
+              <Route path="/cybersecurity-services" element={<Navigate to="/services" replace />} />
+              <Route path="/blog" element={<Blog />} />
               {/* Only main services remain. Removed unused service detail routes. */}
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />

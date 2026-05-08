@@ -129,25 +129,6 @@ export default function About() {
               </Button>
             </Grid>
           </Grid>
-
-          <Box className="reveal-up delay-2" sx={{ display: "flex", gap: { xs: 1.5, md: 2 }, overflowX: "auto", pb: 1 }}>
-            {["/img/gue (4).jpg", "/img/gue (6).jpg", "/img/gue (5).jpg", "/img/gue (4).jpg"].map((img, index) => (
-              <Box
-                key={`${img}-${index}`}
-                component="img"
-                src={img}
-                alt={t('common.companyName')}
-                sx={{
-                  minWidth: { xs: 220, sm: 300, md: 340 },
-                  width: { xs: 220, sm: 300, md: 340 },
-                  height: { xs: 160, sm: 210, md: 240 },
-                  objectFit: "cover",
-                  borderRadius: 4,
-                  flexShrink: 0,
-                }}
-              />
-            ))}
-          </Box>
         </Container>
       </Box>
 
@@ -173,16 +154,16 @@ export default function About() {
           <Box sx={{ bgcolor: "#a3e635", borderRadius: limePanelRadius, px: limePanelPadding, pt: { xs: 5, md: 7 }, pb: { xs: 6, md: 8 } }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 3 }}>
               <Box sx={{ width: 8, height: 8, borderRadius: "50%", bgcolor: "#022c22" }} />
-              <Typography sx={{ fontSize: "0.9rem", fontWeight: 700, color: "#052e2b" }}>Core Values</Typography>
+              <Typography sx={{ fontSize: "0.9rem", fontWeight: 700, color: "#052e2b" }}>{t('about.values')}</Typography>
             </Box>
             <Box sx={{ borderTop: "1px solid rgba(4,47,46,0.32)", pt: { xs: 4, md: 6 } }}>
               <Grid container spacing={{ xs: 4, md: 6 }}>
                 {values.map((item) => (
-                  <Grid item xs={12} md={4} key={item.titleKey} className={`reveal-up delay-${(item.index % 3) + 1}`}>
-                    <Typography variant="h5" sx={{ mb: 1.2, fontWeight: 800, color: "#052e2b" }}>
+                  <Grid item xs={12} md={4} key={item.titleKey}>
+                    <Typography variant="h5" sx={{ mb: 1.2, fontWeight: 800, color: "#052e2b", fontSize: "1.25rem" }}>
                       {t(`about.${item.titleKey}`)}
                     </Typography>
-                    <Typography sx={{ color: "#10403d" }}>{t(`about.${item.textKey}`)}</Typography>
+                    <Typography sx={{ color: "#10403d", lineHeight: 1.6 }}>{t(`about.${item.textKey}`)}</Typography>
                   </Grid>
                 ))}
               </Grid>
