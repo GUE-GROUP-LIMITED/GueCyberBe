@@ -119,6 +119,33 @@ export default function Footer() {
                         <Typography sx={{ maxWidth: 760, color: 'rgba(226,232,240,0.84)', fontSize: { xs: '0.96rem', md: '1rem' }, lineHeight: 1.7 }}>
                             {t('footer.description')}
                         </Typography>
+                        <Box
+                            component="a"
+                            href="https://insights.guecyber.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            sx={{
+                                alignSelf: 'flex-start',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                px: 2,
+                                py: 1,
+                                borderRadius: '999px',
+                                border: '1px solid rgba(217,249,157,0.28)',
+                                color: '#d9f99d',
+                                textDecoration: 'none',
+                                fontWeight: 700,
+                                fontSize: '0.92rem',
+                                background: 'rgba(255,255,255,0.03)',
+                                transition: 'all 0.2s ease',
+                                '&:hover': {
+                                    background: 'rgba(163,230,53,0.12)',
+                                    borderColor: 'rgba(217,249,157,0.5)',
+                                },
+                            }}
+                        >
+                            {t('common.insights')}
+                        </Box>
                     </Box>
 
                     <Grid container spacing={{ xs: 4, md: 6 }}>

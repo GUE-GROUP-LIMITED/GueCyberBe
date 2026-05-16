@@ -25,6 +25,7 @@ export default function Header() {
         { to: "/", label: t('common.home') },
         { to: "/about", label: t('common.about') },
         { to: "/services", label: t('common.services') },
+        { href: "https://insights.guecyber.com/", label: t('common.insights'), external: true },
         { to: "/contact", label: t('common.contact') },
     ];
 
@@ -39,6 +40,18 @@ export default function Header() {
         background: 'transparent',
         boxShadow: 'none',
     });
+
+    const externalNavLinkStyle = {
+        color: faunaHeroMode ? 'rgba(226,232,240,0.9)' : '#475569',
+        fontWeight: 600,
+        fontSize: '0.9rem',
+        padding: '10px 4px',
+        borderBottom: '2px solid transparent',
+        textDecoration: 'none',
+        transition: 'all 0.25s ease',
+        background: 'transparent',
+        boxShadow: 'none',
+    };
 
     return (
         <header>
@@ -126,13 +139,26 @@ export default function Header() {
                         border: 'none',
                     }}>
                         {navLinks.map(link => (
-                            <NavLink
-                                key={link.to}
-                                to={link.to}
-                                style={navLinkStyle}
-                            >
-                                {link.label}
-                            </NavLink>
+                            link.external ? (
+                                <Box
+                                    key={link.href}
+                                    component="a"
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    sx={externalNavLinkStyle}
+                                >
+                                    {link.label}
+                                </Box>
+                            ) : (
+                                <NavLink
+                                    key={link.to}
+                                    to={link.to}
+                                    style={navLinkStyle}
+                                >
+                                    {link.label}
+                                </NavLink>
+                            )
                         ))}
                     </Stack>
 
@@ -212,17 +238,34 @@ export default function Header() {
                         </Box>
                     <List sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                         {navLinks.map((link) => (
-                            <ListItemButton
-                                key={link.to}
-                                component={NavLink} to={link.to}
-                                onClick={() => setMobileOpen(false)}
-                                sx={{
-                                    py: 2.5, borderRadius: '16px',
-                                    '&.active': { background: 'var(--accent-soft)', color: 'var(--accent)' }
-                                }}
-                            >
-                                <ListItemText primary={link.label} primaryTypographyProps={{ fontWeight: 700, fontSize: '1.2rem' }} />
-                            </ListItemButton>
+                            link.external ? (
+                                <ListItemButton
+                                    key={link.href}
+                                    component="a"
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    onClick={() => setMobileOpen(false)}
+                                    sx={{
+                                        py: 2.5, borderRadius: '16px',
+                                        '&.active': { background: 'var(--accent-soft)', color: 'var(--accent)' }
+                                    }}
+                                >
+                                    <ListItemText primary={link.label} primaryTypographyProps={{ fontWeight: 700, fontSize: '1.2rem' }} />
+                                </ListItemButton>
+                            ) : (
+                                <ListItemButton
+                                    key={link.to}
+                                    component={NavLink} to={link.to}
+                                    onClick={() => setMobileOpen(false)}
+                                    sx={{
+                                        py: 2.5, borderRadius: '16px',
+                                        '&.active': { background: 'var(--accent-soft)', color: 'var(--accent)' }
+                                    }}
+                                >
+                                    <ListItemText primary={link.label} primaryTypographyProps={{ fontWeight: 700, fontSize: '1.2rem' }} />
+                                </ListItemButton>
+                            )
                         ))}
                     </List>
                     <Button
