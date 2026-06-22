@@ -24,28 +24,57 @@
   },
   "home": {
     "hero": {
-      "title": "Protéger les entreprises grâce à des solutions intelligentes de cybersécurité et d'informatique",
-      "subtitle": "Cybersécurité, conseil informatique et solutions logicielles pratiques pour les organisations modernes"
+      "title": "Automatisation IA, développement logiciel et cybersécurité pour les entreprises modernes",
+      "subtitle": "Votre agence d'automatisation IA pour des logiciels évolutifs et une cyber-résilience durable"
     },
-    "heroDescription": "GUE CYBER fournit des services pratiques de cybersécurité, de conseil informatique et de développement logiciel pour aider les organisations à fonctionner en toute sécurité et en confiance.",
-    "tagline": "Nous réalisons des audits de cybersécurité, du développement sécurisé et des services de sécurité managés.",
-    "description": "GUE CYBER fournit la programmation logicielle, le conseil informatique et d'autres services IT et informatiques pour votre entreprise.",
-    "tagline": "Audits de cybersécurité, réponse aux incidents et sécurité managée — services pratiques pour la continuité métier.",
+    "heroDescription": "GUE CYBER aide les organisations à automatiser leurs opérations avec l'IA, à développer des logiciels fiables et à renforcer la cybersécurité.",
+    "tagline": "Services d'agence d'automatisation IA, livraison logicielle et cybersécurité réunis dans un partenaire pratique.",
+    "description": "GUE CYBER fournit des services d'automatisation IA, de développement logiciel et de cybersécurité pour votre entreprise.",
     "stat1": "Numéro d'unité d'établissement",
     "stat2": "Statut",
     "stat3": "Unités",
     "stat4": "Date de début",
     "capability1": {
-      "title": "Programmation informatique",
-      "text": "Conception et développement de logiciels métiers, applications web, outils internes et automatisation."
+      "title": "Agence d'automatisation IA",
+      "text": "Conception de workflows IA, d'agents d'automatisation et d'intégrations de processus pour réduire les tâches manuelles."
     },
     "capability2": {
-      "title": "Conseil informatique",
-      "text": "Planification IT, conseil technique et accompagnement des systèmes et des parcs informatiques."
+      "title": "Développement logiciel",
+      "text": "Création d'applications web, d'outils internes, d'API et de plateformes métier adaptées à vos opérations."
     },
     "capability3": {
-      "title": "Autres services IT et informatiques",
-      "text": "Support, maintenance, administration des systèmes et services IT généraux pour les entreprises."
+      "title": "Services de cybersécurité",
+      "text": "Protection des systèmes via audits, durcissement, supervision et support de réponse aux incidents."
+    },
+    "whyChooseUs": {
+      "title": "Pourquoi choisir GUE CYBER",
+      "reason1": {
+        "title": "Ce que nous faisons",
+        "text": "Nous fournissons des services pratiques d'automatisation IA, d'ingénierie logicielle et de cybersécurité conçus pour les résultats métier."
+      },
+      "reason2": {
+        "title": "Orienté métier",
+        "text": "Solutions axées sur une livraison pratique, la clarté et la valeur mesurable."
+      },
+      "reason3": {
+        "title": "Livraison moderne",
+        "text": "Communication claire et livraison fiable du premier contact à la remise."
+      },
+      "reason4": {
+        "title": "Support réactif",
+        "text": "Assistance technique fiable quand les entreprises en ont le plus besoin."
+      }
+    },
+    "industries": {
+      "title": "Secteurs que nous soutenons",
+      "list": [
+        "Petites entreprises",
+        "Écoles et institutions d'enseignement",
+        "Startups et entreprises en croissance",
+        "ONG et organisations",
+        "Services professionnels",
+        "Commerce de détail et hôtellerie"
+      ]
     },
     "testimonial1": {
       "text": "Gue Cyber nous a aidés à réduire les risques de plateforme tout en améliorant la vitesse de publication. Leurs conseils en cybersécurité et DevOps étaient pratiques et immédiatement utiles.",
@@ -55,29 +84,32 @@
       "text": "De la planification architecturale au support d'implémentation, l'équipe a fourni une direction claire et des améliorations mesurables dans nos opérations numériques.",
       "author": "CTO"
     },
-    "faqIntro": "De la programmation logicielle au conseil informatique et aux autres services IT, nous aidons les organisations à résoudre des défis technologiques pratiques.",
+    "faqIntro": "De l'automatisation IA et du développement logiciel aux opérations de cybersécurité, nous aidons les organisations à résoudre des défis technologiques concrets.",
     "faqTitle": "Questions fréquemment posées",
     "faqDescription": "Vous trouverez ici des réponses claires sur nos services et notre manière de travailler.",
+    "deliverTitle": "Ce que nous livrons",
+    "deliverSubtitle": "Trois piliers essentiels : agence d'automatisation IA, développement logiciel et cybersécurité",
+    "exploreAllServices": "Explorer tous les services",
     "cta": {
-      "title": "Besoin d'un support logiciel ou informatique?",
-      "description": "Que vous ayez besoin de programmation logicielle, de conseil informatique ou d'autres services IT et informatiques, GUE CYBER peut vous aider.",
+      "title": "Besoin d'automatisation IA, de logiciel ou de cybersécurité?",
+      "description": "Que vous ayez besoin d'automatiser vos workflows, de développer un produit logiciel ou de renforcer votre sécurité, GUE CYBER peut vous aider.",
       "button1": "Obtenir une consultation gratuite",
       "button2": "Nous contacter"
     },
     "tiles": {
       "tile1": { "title": "Basé en Belgique", "text": "Support local et connaissance de la conformité pour les organisations belges." },
       "tile2": { "title": "Évaluation de sécurité gratuite", "text": "Demandez un examen concis pour identifier les lacunes évidentes et les étapes suivantes." },
-      "tile3": { "title": "Spécialiste PME", "text": "Services de cybersécurité et IT pratiques et légers pour les petites équipes." },
+      "tile3": { "title": "Spécialiste PME", "text": "Automatisation IA, développement logiciel et cybersécurité pratiques et légers pour les petites équipes." },
       "tile4": { "title": "Livrables transparents", "text": "Rapports clairs, calendriers et recommandations réalistes — sans surprise." }
     }
   },
   "about": {
     "hero": {
-      "title": "Services de programmation logicielle et informatique"
+      "title": "Automatisation IA, développement logiciel et cybersécurité"
     },
-    "description": "GUE CYBER a été créée pour fournir des services pratiques de programmation logicielle, de conseil informatique et d'autres services IT et informatiques.",
+    "description": "GUE CYBER a été créée pour fournir des services pratiques d'automatisation IA, de développement logiciel et de cybersécurité.",
     "aboutTitle": "À propos de nous",
-    "aboutText": "Nous sommes une entreprise technologique belge spécialisée dans la programmation logicielle, le conseil informatique et les autres services IT et informatiques.",
+    "aboutText": "Nous sommes une entreprise technologique belge spécialisée en automatisation IA, développement logiciel et cybersécurité.",
     "stat1": "Mondial",
     "stat1Label": "Livraison claire",
     "stat2": "Fiable",
@@ -99,11 +131,11 @@
   },
   "services": {
     "hero": {
-      "title": "Services de programmation logicielle et informatique"
+      "title": "Services d'automatisation IA, de développement logiciel et de cybersécurité"
     },
-    "description": "Nos activités actuelles sont la programmation logicielle, le conseil informatique et les autres services IT et informatiques.",
+    "description": "Nos services principaux sont l'automatisation IA, le développement logiciel et la cybersécurité.",
     "cyberTitle": "Capacités de cybersécurité",
-    "cyberline": "Nous proposons des services de cybersécurité dans le cadre de notre offre de conseil informatique et de services IT. Nos capacités typiques comprennent :",
+    "cyberline": "Nous proposons des services de cybersécurité en complément de nos offres d'automatisation IA et de développement logiciel. Nos capacités typiques comprennent :",
     "cyberItems": [
       "Audits de sécurité et évaluations de vulnérabilité",
       "Réponse aux incidents et remédiation",
@@ -113,30 +145,30 @@
       "Supervision et sécurité gérée de base"
     ],
     "service1": {
-      "title": "Programmation informatique",
+      "title": "Agence d'automatisation IA",
       "items": [
-        "Conception et développement de logiciels métiers",
-        "Applications web et outils internes",
-        "Intégration d'API et de systèmes",
-        "Automatisation et outils de flux de travail"
+        "Automatisation IA des opérations répétitives",
+        "Mise en place d'agents et de chatbots pour les équipes",
+        "Intégration des processus métier entre outils et données",
+        "Gouvernance, supervision et optimisation de l'automatisation"
       ]
     },
     "service2": {
-      "title": "Conseil informatique et gestion de parcs informatiques",
+      "title": "Développement logiciel",
       "items": [
-        "Planification informatique et conseil technique",
-        "Gestion des environnements et des parcs informatiques",
-        "Support des systèmes métiers et du déploiement",
-        "Accompagnement opérationnel continu"
+        "Développement d'applications web et métier sur mesure",
+        "Outils internes, portails et intégrations API",
+        "Modernisation de plateformes et amélioration des performances",
+        "Support de livraison, assurance qualité et maintenance"
       ]
     },
     "service3": {
-      "title": "Autres services informatiques et liés à l'informatique",
+      "title": "Services de cybersécurité",
       "items": [
-        "Support technique et maintenance",
-        "Administration des systèmes et assistance aux utilisateurs",
-        "Assistance cloud et infrastructure",
-        "Livraison générale de services IT"
+        "Évaluations de sécurité et gestion des vulnérabilités",
+        "Durcissement cloud et endpoints",
+        "Supervision des menaces et réponse aux incidents",
+        "Sensibilisation à la sécurité et support de gouvernance"
       ]
     },
     "service4": {
@@ -155,7 +187,7 @@
     "step1Text": "Comprendre vos systèmes, vos objectifs et vos besoins opérationnels avant de proposer une solution.",
     "step2": "02",
     "step2Title": "Concevoir",
-    "step2Text": "Définir un plan de livraison pratique autour des logiciels, du conseil et du support.",
+    "step2Text": "Définir un plan de livraison pratique autour de l'automatisation, de l'ingénierie logicielle et de la sécurité.",
     "step3": "03",
     "step3Title": "Livrer",
     "step3Text": "Construire, configurer ou améliorer la solution avec des étapes claires et une communication régulière.",
@@ -163,13 +195,13 @@
     "step4Title": "Soutenir",
     "step4Text": "Examiner les résultats, affiner le travail et accompagner la phase suivante si nécessaire.",
     "cta": {
-      "title": "Besoin d'un support logiciel ou informatique?",
-      "description": "Parlez-nous de conception logicielle, de conseil informatique ou d'autres services IT adaptés à votre activité."
+      "title": "Besoin d'automatisation IA, de logiciel ou de cybersécurité?",
+      "description": "Parlez-nous de l'automatisation de vos opérations avec l'IA, de la création de produits logiciels et du renforcement de votre résilience cyber."
     }
   },
   "contact": {
     "title": "Nous contacter",
-    "subtitle": "Nous sommes là pour vous aider.",
+    "subtitle": "Contactez GUE CYBER pour des solutions d'automatisation IA, de développement logiciel et de cybersécurité.",
     "fullName": "Nom complet",
     "email": "E-mail",
     "company": "Entreprise",
@@ -180,6 +212,10 @@
     "cloud": "Renforcement du cloud",
     "incident": "Réponse aux incidents",
     "advisory": "Conseil & Gouvernance",
+    "consulting": "Agence d'automatisation IA",
+    "itSupport": "Développement logiciel",
+    "cloudServices": "Services de cybersécurité",
+    "other": "Autre",
     "message": "Message",
     "privacyConsent": "J'accepte le traitement de mes données pour cette demande et j'ai lu la",
     "privacyLink": "Politique de confidentialité",
@@ -200,7 +236,7 @@
     "job4Title": "Spécialiste de formation d'entreprise",
     "careersHero": "Carrière",
     "careersSubtitle": "Rejoignez une équipe créant des résultats cyber et technologiques pratiques.",
-    "careersDescription": "Nous créons une culture d'appropriation, de précision et d'excellence en livraison en cybersécurité, cloud, logiciels et services informatiques.",
+    "careersDescription": "Nous créons une culture d'appropriation, de précision et d'excellence en livraison en cybersécurité, cloud, logiciels et automatisation IA.",
     "openPositions": "Postes ouverts",
     "openLabel": "Poste ouvert",
     "applyNow": "Postuler maintenant",
@@ -240,7 +276,7 @@
   },
   "faq": {
     "q1": "Quels services Gue Cyber offre-t-elle?",
-    "a1": "Gue Cyber offre des services de cybersécurité, de transformation numérique et d'infrastructure pour les PME et les entreprises. Nous proposons des évaluations de vulnérabilités, du renforcement infrastructure, des migrations sécurisées et des formations pour améliorer la résilience.",
+    "a1": "Gue Cyber propose trois piliers de services : automatisation IA, développement logiciel et cybersécurité. Nous accompagnons les organisations avec l'automatisation des processus, la création d'applications et le renforcement de la sécurité pour améliorer la résilience.",
     "q2": "Proposez-vous une formation en matière de sécurité et des exercices de réponse aux incidents?",
     "a2": "Oui — nous proposons une sensibilisation à la sécurité, des exercices de table pour la réponse aux incidents et une formation technique pratique comme le codage sécurisé et l'analyse de journaux pour renforcer les capacités de sécurité internes.",
     "q3": "Pouvez-vous nous aider à adopter l'IA de façon responsable?",
@@ -252,7 +288,7 @@
     "platform": "Plateforme",
     "resources": "Ressources",
     "company": "Entreprise",
-    "description": "Solutions de cybersécurité et informatique pour les petites entreprises, écoles, organisations et entreprises en croissance en Belgique et à l'international. Audits de cybersécurité, réponse aux incidents et sécurité informatique managée — services pratiques pour la continuité métier.",
+    "description": "Services d'automatisation IA, de développement logiciel et de cybersécurité pour les PME, écoles, organisations et entreprises en croissance en Belgique et à l'international. Des solutions pratiques pour la continuité métier et la performance opérationnelle.",
     "newsletter": "Votre source pour les mises à jour cyber business",
     "newsletterDesc": "Rejoignez notre bulletin mensuel avec des perspectives sur la cybersécurité, le cloud, la livraison logicielle et la résilience opérationnelle.",
     "email": "vous@entreprise.fr",

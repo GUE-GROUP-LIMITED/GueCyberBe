@@ -2,36 +2,36 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const SITE_NAME = "Gue Cyber";
-const DEFAULT_TITLE = "Gue Cyber | Cybersecurity, Software Engineering and AI";
+const DEFAULT_TITLE = "Gue Cyber | AI Automation Agency, Software Development, Cybersecurity";
 const DEFAULT_DESCRIPTION =
-  "Gue Cyber delivers cybersecurity, software engineering, AI automation, cloud and DevOps, IT consulting, enterprise training, and technology procurement services.";
+  "Gue Cyber delivers AI automation agency services, software development, and cybersecurity support to help organizations scale securely.";
 const DEFAULT_IMAGE = "/img/gue (5).jpg";
 
 const routeMeta = {
   "/": {
-    title: "Gue Cyber | Cybersecurity & IT Solutions",
+    title: "Gue Cyber | AI Automation Agency, Software Development, Cybersecurity",
     description:
-      "Gue Cyber provides practical cybersecurity, IT consulting and software solutions to help small and medium businesses operate securely and reliably.",
+      "Gue Cyber provides practical AI automation, software development, and cybersecurity services to help organizations operate securely and efficiently.",
   },
   "/about": {
     title: "About | Gue Cyber",
     description:
-      "Learn about Gue Cyber, our mission, values, and approach to building resilient digital operations across cybersecurity, software engineering, and AI.",
+      "Learn about Gue Cyber, our mission, values, and approach to delivering AI automation, software development, and cybersecurity outcomes.",
   },
   "/services": {
     title: "Services | Gue Cyber",
     description:
-      "Explore Gue Cyber service offerings across cybersecurity, software engineering, AI automation, cloud and DevOps, consulting, training, and tech procurement.",
+      "Explore Gue Cyber offerings across AI automation agency services, custom software development, and cybersecurity protection.",
   },
   "/contact": {
     title: "Contact | Gue Cyber",
     description:
-      "Contact Gue Cyber to discuss cybersecurity, software engineering, AI, cloud, DevOps, and IT transformation priorities.",
+      "Contact Gue Cyber to discuss AI automation opportunities, software projects, and cybersecurity priorities.",
   },
   "/careers": {
     title: "Careers | Gue Cyber",
     description:
-      "Explore career opportunities at Gue Cyber across cybersecurity, cloud and DevOps, software engineering, AI, IT support, training, and procurement operations.",
+      "Explore career opportunities at Gue Cyber across AI automation, software development, and cybersecurity delivery.",
   },
   "/privacy": {
     title: "Privacy Policy | Gue Cyber",

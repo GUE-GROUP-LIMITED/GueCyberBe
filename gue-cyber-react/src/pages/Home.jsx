@@ -259,10 +259,10 @@ export default function Home() {
         <Container maxWidth="lg">
           <Box sx={{ maxWidth: 920, mx: "auto", textAlign: "center", mb: { xs: 6, md: 8 } }}>
             <Typography variant="h2" sx={{ fontSize: { xs: "2.25rem", md: "3.2rem" }, mb: 2, lineHeight: 1.06 }}>
-              What We Deliver
+              {t('home.deliverTitle')}
             </Typography>
             <Typography sx={{ color: "var(--text-muted)", maxWidth: 760, mx: "auto" }}>
-              Three core service areas designed to help your business
+              {t('home.deliverSubtitle')}
             </Typography>
           </Box>
           <Grid container spacing={{ xs: 3, md: 4 }}>
@@ -288,7 +288,7 @@ export default function Home() {
                       "&:hover": { background: "transparent", color: "#a3e635" },
                     }}
                   >
-                    Learn more →
+                    {t('common.readMore')} →
                   </Button>
                 </Box>
               </Grid>
@@ -311,7 +311,7 @@ export default function Home() {
                 "&:hover": { bgcolor: "#064e3b" },
               }}
             >
-              Explore All Services
+              {t('home.exploreAllServices')}
             </Button>
           </Box>
         </Container>

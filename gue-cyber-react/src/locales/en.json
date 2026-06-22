@@ -24,33 +24,33 @@
   },
   "home": {
     "hero": {
-      "title": "Protecting Businesses Through Smart Cybersecurity & IT Solutions",
-      "subtitle": "Cybersecurity, IT consulting, and practical software solutions for modern organizations"
+      "title": "AI Automation, Software Development, and Cybersecurity for Modern Businesses",
+      "subtitle": "Your practical AI Automation Agency for secure, scalable software and cyber resilience"
     },
-    "heroDescription": "GUE CYBER delivers practical cybersecurity, IT consulting, and software support to help organizations operate securely and confidently.",
-    "tagline": "We provide cybersecurity audits, secure development, and managed IT security services.",
-    "description": "Gue Cyber delivers software programming, computer consultancy, and other IT and computer services for your business.",
+    "heroDescription": "GUE CYBER helps organizations automate workflows with AI, build reliable software, and strengthen cybersecurity across operations.",
+    "tagline": "AI automation agency services, software delivery, and cybersecurity protection in one practical partner.",
+    "description": "Gue Cyber delivers AI automation, software development, and cybersecurity services for your business.",
     "stat1": "Branch Unit Number",
     "stat2": "Status",
     "stat3": "Branch Units",
     "stat4": "Start Date",
     "capability1": {
-      "title": "Computer Programming",
-      "text": "Design and build business software, web applications, internal tools, and automation workflows."
+      "title": "AI Automation Agency",
+      "text": "Design AI-powered workflows, agent automations, and process integrations that reduce manual effort."
     },
     "capability2": {
-      "title": "Computer Consultancy",
-      "text": "Provide IT planning, technical advisory, and guidance for systems and computer facilities."
+      "title": "Software Development",
+      "text": "Build web applications, internal tools, APIs, and business platforms tailored to your operations."
     },
     "capability3": {
-      "title": "Other IT & Computer Services",
-      "text": "Deliver support, maintenance, system administration, and general IT services for businesses."
+      "title": "Cybersecurity Services",
+      "text": "Protect systems with audits, hardening, monitoring, and incident response support."
     },
     "whyChooseUs": {
       "title": "Why Choose GUE CYBER",
       "reason1": {
         "title": "What We Do",
-        "text": "We deliver practical software, consultancy, and IT services designed for business results."
+        "text": "We deliver practical AI automation, software engineering, and cybersecurity services designed for business results."
       },
       "reason2": {
         "title": "Business-Oriented",
@@ -84,12 +84,15 @@
       "text": "From architecture planning to implementation support, the team delivered clear direction and measurable improvements across our digital operations.",
       "author": "CTO"
     },
-    "faqIntro": "From software programming to computer consultancy and other IT services, we help organizations solve practical technology challenges.",
+    "faqIntro": "From AI automation and software development to cybersecurity operations, we help organizations solve practical technology challenges.",
     "faqTitle": "Frequently Asked Questions",
     "faqDescription": "Here you will find clear answers to common questions about our services and how we work.",
+    "deliverTitle": "What We Deliver",
+    "deliverSubtitle": "Three core pillars: AI Automation Agency, Software Development, and Cybersecurity",
+    "exploreAllServices": "Explore All Services",
     "cta": {
-      "title": "Need software or IT support?",
-      "description": "Whether you need software programming, computer consultancy, or other IT and computer services, GUE CYBER can help.",
+      "title": "Need AI automation, software, or cybersecurity support?",
+      "description": "Whether you need workflow automation, software engineering, or cybersecurity expertise, GUE CYBER can help.",
       "button1": "Get Free Consultation",
       "button2": "Contact Us"
     },
@@ -102,13 +105,13 @@
   },
   "about": {
     "hero": {
-      "title": "Software Programming and IT Services"
+      "title": "AI Automation, Software Development, and Cybersecurity"
     },
-    "description": "GUE CYBER was founded to deliver software programming, computer consultancy, and other IT and computer services to businesses that want practical support.",
+    "description": "GUE CYBER was founded to deliver AI automation, software development, and cybersecurity services to businesses that want practical support.",
     "aboutTitle": "About Us",
-    "aboutText": "We are a Belgian technology business focused on software programming, computer consultancy, and other IT and computer services.",
+    "aboutText": "We are a Belgian technology business focused on AI automation, software development, and cybersecurity services.",
     "mission": "Our Mission",
-    "missionText": "To help organizations operate efficiently through practical software and IT services delivered clearly and professionally.",
+    "missionText": "To help organizations scale efficiently through practical AI automation, software engineering, and cybersecurity delivered clearly and professionally.",
     "values": "Our Values",
     "stat1": "Professional",
     "stat1Label": "Clear delivery",
@@ -131,11 +134,11 @@
   },
   "services": {
     "hero": {
-      "title": "Software Programming and IT Services"
+      "title": "AI Automation, Software Development, and Cybersecurity Services"
     },
-    "description": "Our current activities are software programming, computer consultancy, and other IT and computer services.",
+    "description": "Our core services are AI automation agency delivery, software development, and cybersecurity support.",
     "cyberTitle": "Cybersecurity Capabilities",
-    "cyberline": "We deliver cybersecurity services as part of our computer consultancy and IT service offerings. Typical capabilities include:",
+    "cyberline": "We deliver cybersecurity services alongside our AI automation and software development offerings. Typical capabilities include:",
     "cyberItems": [
       "Security audits & vulnerability assessments",
       "Incident response & remediation",
@@ -145,30 +148,30 @@
       "Monitoring & basic managed security"
     ],
     "service1": {
-      "title": "Computer Programming",
+      "title": "AI Automation Agency",
       "items": [
-        "Design and development of business software",
-        "Web applications and internal tools",
-        "API and system integration",
-        "Automation and workflow tooling"
+        "AI workflow automation for repetitive operations",
+        "Agent and chatbot implementation for teams and support",
+        "Business process integration across tools and data",
+        "Automation governance, monitoring, and optimization"
       ]
     },
     "service2": {
-      "title": "Computer Consultancy & Facility Management",
+      "title": "Software Development",
       "items": [
-        "IT planning and technical advisory",
-        "Managing computer facilities and environments",
-        "Business systems support and deployment",
-        "Ongoing operational guidance"
+        "Custom web and business application development",
+        "Internal tools, portals, and API integration",
+        "Platform modernization and performance improvements",
+        "Release support, quality assurance, and maintenance"
       ]
     },
     "service3": {
-      "title": "Other IT & Computer Services",
+      "title": "Cybersecurity Services",
       "items": [
-        "Technical support and maintenance",
-        "System administration and user support",
-        "Cloud and infrastructure assistance",
-        "General IT service delivery"
+        "Security assessments and vulnerability management",
+        "Cloud and endpoint hardening",
+        "Threat monitoring and incident response",
+        "Security awareness and governance support"
       ]
     },
     "service4": {
@@ -187,7 +190,7 @@
     "step1Text": "Understand your systems, goals, and operational needs before any solution is proposed.",
     "step2": "02",
     "step2Title": "Design",
-    "step2Text": "Shape a practical delivery plan around software, consultancy, and support priorities.",
+    "step2Text": "Shape a practical delivery plan around automation, software engineering, and security priorities.",
     "step3": "03",
     "step3Title": "Deliver",
     "step3Text": "Build, configure, or improve the solution with clear milestones and communication.",
@@ -195,8 +198,8 @@
     "step4Title": "Support",
     "step4Text": "Review outcomes, refine the work, and support the next phase when needed.",
     "cta": {
-      "title": "Need software or IT support?",
-      "description": "Talk to us about software design, computer consultancy, or other IT and computer services aligned to your business needs."
+      "title": "Need AI automation, software, or cybersecurity support?",
+      "description": "Talk to us about automating operations with AI, building software products, and strengthening cyber resilience for your business."
     },
     "packagesTitle": "Cybersecurity Service Packages",
     "packagesIntro": "Flexible packages for small businesses and growing organizations.",
@@ -298,7 +301,7 @@
   },
   "contact": {
     "title": "Get in Touch",
-    "subtitle": "Contact GUE CYBER for cybersecurity and IT solutions.",
+    "subtitle": "Contact GUE CYBER for AI automation, software development, and cybersecurity solutions.",
     "fullName": "Full Name",
     "email": "Email",
     "phone": "Phone",
@@ -307,9 +310,9 @@
     "service": "Service Interested In",
     "selectService": "Select a service",
     "assessment": "Security Assessment",
-    "consulting": "Cybersecurity Consulting",
-    "itSupport": "IT Support",
-    "cloudServices": "Cloud Services",
+    "consulting": "AI Automation Agency",
+    "itSupport": "Software Development",
+    "cloudServices": "Cybersecurity Services",
     "other": "Other",
     "message": "Message",
     "privacyConsent": "I agree to the processing of my details and confirm I have read the",
