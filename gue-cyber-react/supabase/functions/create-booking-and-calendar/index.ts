@@ -9,8 +9,8 @@
 
 /// <reference path="./types.d.ts" />
 
-import { createClient } from "@supabase/supabase-js";
-import { SmtpClient } from "denomailer";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { SmtpClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
