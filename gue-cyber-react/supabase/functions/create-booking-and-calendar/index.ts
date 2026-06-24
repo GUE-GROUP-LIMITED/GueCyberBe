@@ -10,7 +10,7 @@
 /// <reference path="./types.d.ts" />
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { SmtpClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
+import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -259,12 +259,15 @@ Deno.serve(async (req: Request) => {
     `.trim();
 
     // --- Send via cPanel SMTP ---
-    const client = new SmtpClient();
-    await client.connectTLS({
-      hostname: smtpHost,
-      port: smtpPort,
-      username: smtpUser,
-      password: smtpPass,
+    const client = new SMTPClient({
+      connection: {
+        hostname: smtpHost,
+        port: smtpPort,
+        auth: {
+          username: smtpUser,
+          password: smtpPass,
+        },
+      },
     });
 
     await client.send({
