@@ -6,3 +6,6 @@ verify_jwt = false
 
 [functions.send-newsletter-ack]
 verify_jwt = false
+
+[functions.create-booking-and-calendar]
+verify_jwt = false

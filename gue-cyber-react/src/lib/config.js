@@ -10,6 +10,7 @@ export const config = {
     publishableKey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
     ackFunctionName: import.meta.env.VITE_SUPABASE_ACK_FUNCTION_NAME || 'send-application-ack',
     newsletterAckFunctionName: import.meta.env.VITE_SUPABASE_NEWSLETTER_ACK_FUNCTION_NAME || 'send-newsletter-ack',
+    bookingFunctionName: import.meta.env.VITE_SUPABASE_BOOKING_FUNCTION_NAME || 'create-booking-and-calendar',
   },
 
   // EmailJS Configuration (for frontend alerts)

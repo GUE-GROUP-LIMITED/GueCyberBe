@@ -94,38 +94,49 @@ function ScrollToTop() {
   return null;
 }
 
+function AppLayout() {
+  const { pathname } = useLocation();
+  const useMockupChrome = pathname === "/" || pathname === "/services";
+
+  return (
+    <>
+      <ScrollToTop />
+      <SeoManager />
+      {/* Skip link: visible on keyboard focus to jump to main content */}
+      <a href="#main" className="skip-link">Skip to main content</a>
+      {!useMockupChrome && <Header />}
+      <Suspense fallback={<Box role="status" aria-live="polite" sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}><CircularProgress aria-label="Loading page content" /></Box>}>
+        <main id="main" tabIndex={-1}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/assessment" element={<Assessment />} />
+            <Route path="/cybersecurity-services" element={<Navigate to="/services" replace />} />
+            <Route path="/blog" element={<Blog />} />
+            {/* Only main services remain. Removed unused service detail routes. */}
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
+          </Routes>
+        </main>
+      </Suspense>
+      {!useMockupChrome && <Footer />}
+      <CookieConsentBanner />
+      <Analytics />
+    </>
+  );
+}
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div style={{ width: '100%', overflowX: 'hidden' }}>
         <Router>
-          <ScrollToTop />
-          <SeoManager />
-          {/* Skip link: visible on keyboard focus to jump to main content */}
-          <a href="#main" className="skip-link">Skip to main content</a>
-          <Header />
-          <Suspense fallback={<Box role="status" aria-live="polite" sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}><CircularProgress aria-label="Loading page content" /></Box>}>
-            <main id="main" tabIndex={-1}>
-              <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/assessment" element={<Assessment />} />
-              <Route path="/cybersecurity-services" element={<Navigate to="/services" replace />} />
-              <Route path="/blog" element={<Blog />} />
-              {/* Only main services remain. Removed unused service detail routes. */}
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/cookie-policy" element={<CookiePolicy />} />
-              </Routes>
-            </main>
-          </Suspense>
-          <Footer />
-          <CookieConsentBanner />
-          <Analytics />
+          <AppLayout />
         </Router>
       </div>
     </ThemeProvider>

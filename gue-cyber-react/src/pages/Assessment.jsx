@@ -1,36 +1,66 @@
 import { Box, Button, Container, Typography, TextField } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { config } from "../lib/config";
+import { supabase } from "../lib/supabase";
 
 export default function Assessment() {
   const { t } = useTranslation();
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [preferredDateTime, setPreferredDateTime] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // minimal validation
-    if (!email.trim()) return;
-
-    // store lead in localStorage
-    try {
-      const key = 'guecyber_leads';
-      const existing = JSON.parse(localStorage.getItem(key) || '[]');
-      existing.push({ email, message, createdAt: new Date().toISOString() });
-      localStorage.setItem(key, JSON.stringify(existing));
-    } catch (err) {
-      // ignore storage errors
+    if (!fullName.trim() || !email.trim() || !preferredDateTime.trim()) {
+      setSubmitError("Please fill in your name, email, and preferred date/time.");
+      return;
     }
 
-    // open user's mail client with prefilled message so the team receives the lead via email
-    const subject = encodeURIComponent('GUE CYBER - Assessment Request');
-    const body = encodeURIComponent(`Email: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`);
-    window.location.href = `mailto:info@guecyber.com?subject=${subject}&body=${body}`;
+    setSubmitError("");
+    setSubmitting(true);
 
-    setSubmitted(true);
-    setEmail("");
-    setMessage("");
+    try {
+      const key = "guecyber_leads";
+      const existing = JSON.parse(localStorage.getItem(key) || '[]');
+      existing.push({ fullName, email, preferredDateTime, message, createdAt: new Date().toISOString() });
+      localStorage.setItem(key, JSON.stringify(existing));
+
+      if (!supabase) {
+        throw new Error("Supabase is not configured.");
+      }
+
+      const { data, error } = await supabase.functions.invoke(config.supabase.bookingFunctionName, {
+        body: {
+          fullName,
+          email,
+          company: "",
+          service: "assessment",
+          message,
+          preferredDateTime,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "Europe/Brussels",
+        },
+      });
+
+      if (error || data?.error) {
+        throw new Error(data?.error || error?.message || "Failed to submit booking request.");
+      }
+
+      setSubmitted(true);
+      setFullName("");
+      setEmail("");
+      setPreferredDateTime("");
+      setMessage("");
+    } catch (err) {
+      const messageText = err instanceof Error ? err.message : "Could not submit your booking. Please try again.";
+      setSubmitError(messageText);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -44,9 +74,22 @@ export default function Assessment() {
 
           {!submitted ? (
             <Box component="form" onSubmit={handleSubmit} sx={{ display: 'grid', gap: 2 }}>
-              <TextField label={t('contact.fullName')} value={email} onChange={(e) => setEmail(e.target.value)} fullWidth />
-              <TextField label={t('contact.email')} value={message} onChange={(e) => setMessage(e.target.value)} fullWidth />
-              <Button type="submit" variant="contained" sx={{ bgcolor: '#a3e635' }}>{t('assessment.button')}</Button>
+              <TextField label={t('contact.fullName')} value={fullName} onChange={(e) => setFullName(e.target.value)} fullWidth required />
+              <TextField label={t('contact.email')} type="email" value={email} onChange={(e) => setEmail(e.target.value)} fullWidth required />
+              <TextField
+                label="Preferred Date & Time"
+                type="datetime-local"
+                value={preferredDateTime}
+                onChange={(e) => setPreferredDateTime(e.target.value)}
+                InputLabelProps={{ shrink: true }}
+                fullWidth
+                required
+              />
+              <TextField label={t('contact.message')} value={message} onChange={(e) => setMessage(e.target.value)} fullWidth multiline minRows={4} />
+              {submitError ? <Typography sx={{ color: '#b91c1c', textAlign: 'left' }}>{submitError}</Typography> : null}
+              <Button type="submit" variant="contained" sx={{ bgcolor: '#a3e635' }} disabled={submitting}>
+                {submitting ? "Submitting..." : t('assessment.button')}
+              </Button>
             </Box>
           ) : (
             <Typography sx={{ mt: 3 }}>{t('assessment.thanks')}</Typography>

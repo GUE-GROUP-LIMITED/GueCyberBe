@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { config } from "../lib/config";
+import { supabase } from "../lib/supabase";
 import "./Contact.css";
 
 export default function Contact() {
@@ -10,6 +12,7 @@ export default function Contact() {
     email: "",
     company: "",
     service: "",
+    preferredDateTime: "",
     message: "",
     consent: false,
   });
@@ -32,6 +35,7 @@ export default function Contact() {
       nextErrors.email = t('contact.form.emailInvalid');
     }
     if (!formData.service) nextErrors.service = t('contact.form.serviceRequired');
+    if (!formData.preferredDateTime) nextErrors.preferredDateTime = "Preferred date and time is required.";
     if (!formData.message.trim()) nextErrors.message = t('contact.form.messageRequired');
     if (!formData.consent) nextErrors.consent = t('contact.form.consentRequired');
 
@@ -39,7 +43,7 @@ export default function Contact() {
     return Object.keys(nextErrors).length === 0;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!validateForm()) {
@@ -47,15 +51,41 @@ export default function Contact() {
       return;
     }
 
-    setSubmitMessage(t('contact.form.successMessage'));
-    setFormData({
-      fullName: "",
-      email: "",
-      company: "",
-      service: "",
-      message: "",
-      consent: false,
-    });
+    try {
+      if (!supabase) {
+        throw new Error("Supabase is not configured.");
+      }
+
+      const { data, error } = await supabase.functions.invoke(config.supabase.bookingFunctionName, {
+        body: {
+          fullName: formData.fullName,
+          email: formData.email,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+          preferredDateTime: formData.preferredDateTime,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "Europe/Brussels",
+        },
+      });
+
+      if (error || data?.error) {
+        throw new Error(data?.error || error?.message || "Could not submit booking request.");
+      }
+
+      setSubmitMessage(t('contact.form.successMessage'));
+      setFormData({
+        fullName: "",
+        email: "",
+        company: "",
+        service: "",
+        preferredDateTime: "",
+        message: "",
+        consent: false,
+      });
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Could not submit booking request.";
+      setSubmitMessage(msg);
+    }
   };
 
   return (
@@ -129,6 +159,19 @@ export default function Contact() {
                     <option value="other">{t('contact.other')}</option>
                   </select>
                   {errors.service ? <p className="contact-error">{errors.service}</p> : null}
+                </div>
+
+                <div className="contact-group">
+                  <label className="contact-label" htmlFor="preferredDateTime">Preferred Date & Time</label>
+                  <input
+                    className={`contact-input ${errors.preferredDateTime ? "error" : ""}`}
+                    type="datetime-local"
+                    id="preferredDateTime"
+                    name="preferredDateTime"
+                    value={formData.preferredDateTime}
+                    onChange={handleChange("preferredDateTime")}
+                  />
+                  {errors.preferredDateTime ? <p className="contact-error">{errors.preferredDateTime}</p> : null}
                 </div>
 
                 <div className="contact-group">
