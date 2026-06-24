@@ -5,6 +5,97 @@ import { config } from "../lib/config";
 import { supabase } from "../lib/supabase";
 import "./Contact.css";
 
+function isWeekendDateTimeLocal(value) {
+  if (!value || !value.includes("T")) return false;
+  const [datePart] = value.split("T");
+  const [y, mo, d] = datePart.split("-").map(Number);
+  if (!y || !mo || !d) return false;
+  const day = new Date(Date.UTC(y, mo - 1, d)).getUTCDay();
+  return day === 0 || day === 6;
+}
+
+function easterSundayUtc(year) {
+  const a = year % 19;
+  const b = Math.floor(year / 100);
+  const c = year % 100;
+  const d = Math.floor(b / 4);
+  const e = b % 4;
+  const f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4);
+  const k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const month = Math.floor((h + l - 7 * m + 114) / 31);
+  const day = ((h + l - 7 * m + 114) % 31) + 1;
+  return new Date(Date.UTC(year, month - 1, day));
+}
+
+function formatYmdUtc(date) {
+  const y = date.getUTCFullYear();
+  const m = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const d = String(date.getUTCDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+function addUtcDays(baseDate, days) {
+  const date = new Date(baseDate.getTime());
+  date.setUTCDate(date.getUTCDate() + days);
+  return date;
+}
+
+function belgianHolidaySet(year) {
+  const easter = easterSundayUtc(year);
+  return new Set([
+    `${year}-01-01`,
+    `${year}-05-01`,
+    `${year}-07-21`,
+    `${year}-08-15`,
+    `${year}-11-01`,
+    `${year}-11-11`,
+    `${year}-12-25`,
+    formatYmdUtc(addUtcDays(easter, 1)),
+    formatYmdUtc(addUtcDays(easter, 39)),
+    formatYmdUtc(addUtcDays(easter, 50)),
+  ]);
+}
+
+function isBelgianHolidayDate(datePart) {
+  if (!datePart) return false;
+  const [y] = datePart.split("-").map(Number);
+  if (!y) return false;
+  return belgianHolidaySet(y).has(datePart);
+}
+
+function isWithinBookingHours(value) {
+  if (!value || !value.includes("T")) return false;
+  const [, timePart] = value.split("T");
+  const [h = "", m = ""] = timePart.split(":");
+  const hour = Number(h);
+  const minute = Number(m);
+  if (Number.isNaN(hour) || Number.isNaN(minute)) return false;
+  if (hour < 9) return false;
+  if (hour > 17) return false;
+  if (hour === 17 && minute > 0) return false;
+  return true;
+}
+
+function getBookingDateTimeError(value) {
+  if (!value || !value.includes("T")) return "";
+  const [datePart] = value.split("T");
+  if (isWeekendDateTimeLocal(value)) {
+    return "Weekend bookings are not available. Please choose Monday to Friday.";
+  }
+  if (isBelgianHolidayDate(datePart)) {
+    return "Bookings are not available on public holidays.";
+  }
+  if (!isWithinBookingHours(value)) {
+    return "Bookings are available only between 09:00 and 17:00.";
+  }
+  return "";
+}
+
 export default function Contact() {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
@@ -36,6 +127,10 @@ export default function Contact() {
     }
     if (!formData.service) nextErrors.service = t('contact.form.serviceRequired');
     if (!formData.preferredDateTime) nextErrors.preferredDateTime = "Preferred date and time is required.";
+    const bookingDateError = getBookingDateTimeError(formData.preferredDateTime);
+    if (bookingDateError) {
+      nextErrors.preferredDateTime = bookingDateError;
+    }
     if (!formData.message.trim()) nextErrors.message = t('contact.form.messageRequired');
     if (!formData.consent) nextErrors.consent = t('contact.form.consentRequired');
 
@@ -169,7 +264,14 @@ export default function Contact() {
                     id="preferredDateTime"
                     name="preferredDateTime"
                     value={formData.preferredDateTime}
-                    onChange={handleChange("preferredDateTime")}
+                    onChange={(event) => {
+                      const value = event.target.value;
+                      setFormData((prev) => ({ ...prev, preferredDateTime: value }));
+                      setErrors((prev) => ({
+                        ...prev,
+                        preferredDateTime: getBookingDateTimeError(value),
+                      }));
+                    }}
                   />
                   {errors.preferredDateTime ? <p className="contact-error">{errors.preferredDateTime}</p> : null}
                 </div>

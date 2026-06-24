@@ -7,8 +7,8 @@ import { Analytics } from '@vercel/analytics/react';
 
 import './i18n';
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
 import CookieConsentBanner from "./components/CookieConsentBanner";
 import SeoManager from "./components/SeoManager";
 import Home from "./pages/Home";
@@ -95,16 +95,13 @@ function ScrollToTop() {
 }
 
 function AppLayout() {
-  const { pathname } = useLocation();
-  const useMockupChrome = pathname === "/" || pathname === "/services";
-
   return (
     <>
       <ScrollToTop />
       <SeoManager />
       {/* Skip link: visible on keyboard focus to jump to main content */}
       <a href="#main" className="skip-link">Skip to main content</a>
-      {!useMockupChrome && <Header />}
+      <SiteHeader />
       <Suspense fallback={<Box role="status" aria-live="polite" sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}><CircularProgress aria-label="Loading page content" /></Box>}>
         <main id="main" tabIndex={-1}>
           <Routes>
@@ -123,7 +120,7 @@ function AppLayout() {
           </Routes>
         </main>
       </Suspense>
-      {!useMockupChrome && <Footer />}
+      <SiteFooter />
       <CookieConsentBanner />
       <Analytics />
     </>

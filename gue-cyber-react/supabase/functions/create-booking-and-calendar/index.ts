@@ -31,6 +31,79 @@ function safe(value: string | undefined, fallback = ""): string {
   return value && value.trim() ? value.trim() : fallback;
 }
 
+function isWeekendDateTimeLocal(value: string): boolean {
+  const [datePart] = value.split("T");
+  const [y, mo, d] = datePart.split("-").map(Number);
+  if (!y || !mo || !d) return false;
+  const day = new Date(Date.UTC(y, mo - 1, d)).getUTCDay();
+  return day === 0 || day === 6;
+}
+
+function easterSundayUtc(year: number): Date {
+  const a = year % 19;
+  const b = Math.floor(year / 100);
+  const c = year % 100;
+  const d = Math.floor(b / 4);
+  const e = b % 4;
+  const f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4);
+  const k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const month = Math.floor((h + l - 7 * m + 114) / 31);
+  const day = ((h + l - 7 * m + 114) % 31) + 1;
+  return new Date(Date.UTC(year, month - 1, day));
+}
+
+function formatYmdUtc(date: Date): string {
+  const y = date.getUTCFullYear();
+  const m = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const d = String(date.getUTCDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+function addUtcDays(baseDate: Date, days: number): Date {
+  const date = new Date(baseDate.getTime());
+  date.setUTCDate(date.getUTCDate() + days);
+  return date;
+}
+
+function belgianHolidaySet(year: number): Set<string> {
+  const easter = easterSundayUtc(year);
+  return new Set<string>([
+    `${year}-01-01`,
+    `${year}-05-01`,
+    `${year}-07-21`,
+    `${year}-08-15`,
+    `${year}-11-01`,
+    `${year}-11-11`,
+    `${year}-12-25`,
+    formatYmdUtc(addUtcDays(easter, 1)),
+    formatYmdUtc(addUtcDays(easter, 39)),
+    formatYmdUtc(addUtcDays(easter, 50)),
+  ]);
+}
+
+function isBelgianHolidayDate(datePart: string): boolean {
+  const [y] = datePart.split("-").map(Number);
+  if (!y) return false;
+  return belgianHolidaySet(y).has(datePart);
+}
+
+function isWithinBookingHours(value: string): boolean {
+  const [, timePart = ""] = value.split("T");
+  const [h = "", m = ""] = timePart.split(":");
+  const hour = Number(h);
+  const minute = Number(m);
+  if (Number.isNaN(hour) || Number.isNaN(minute)) return false;
+  if (hour < 9) return false;
+  if (hour > 17) return false;
+  if (hour === 17 && minute > 0) return false;
+  return true;
+}
+
 /** Format YYYY-MM-DDTHH:mm to iCal YYYYMMDDTHHMMSS */
 function toIcalDate(dt: string): string {
   return dt.replace(/[-:]/g, "").replace("T", "T").slice(0, 15) + "00";
@@ -105,6 +178,28 @@ Deno.serve(async (req: Request) => {
     if (!fullName || !clientEmail || !preferredDateTime) {
       return new Response(
         JSON.stringify({ error: "fullName, email and preferredDateTime are required." }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+
+    if (isWeekendDateTimeLocal(preferredDateTime)) {
+      return new Response(
+        JSON.stringify({ error: "Weekend bookings are not available. Please choose Monday to Friday." }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+
+    const [datePart = ""] = preferredDateTime.split("T");
+    if (isBelgianHolidayDate(datePart)) {
+      return new Response(
+        JSON.stringify({ error: "Bookings are not available on public holidays." }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+
+    if (!isWithinBookingHours(preferredDateTime)) {
+      return new Response(
+        JSON.stringify({ error: "Bookings are available only between 09:00 and 17:00." }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
       );
     }
