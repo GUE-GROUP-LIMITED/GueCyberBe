@@ -3,6 +3,8 @@
 // Secrets needed in Supabase dashboard:
 //   SMTP_HOST        = mail.guecyber.com
 //   SMTP_PORT        = 587
+//   SMTP_TLS_MODE    = starttls | tls   (optional)
+//   ENABLE_BOOKING_SMTP = true | false   (optional, default false)
 //   SMTP_USER        = gabriel.aloho@guecyber.com
 //   SMTP_PASS        = <your cPanel email password>
 //   BOOKING_TO_EMAIL = gabriel.aloho@guecyber.com
@@ -10,7 +12,6 @@
 /// <reference path="./types.d.ts" />
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -29,6 +30,13 @@ type BookingPayload = {
 
 function safe(value: string | undefined, fallback = ""): string {
   return value && value.trim() ? value.trim() : fallback;
+}
+
+function normalizeSmtpTlsMode(rawMode: string, port: number): boolean {
+  const mode = rawMode.toLowerCase();
+  if (mode === "tls") return true;
+  if (mode === "starttls") return false;
+  return port === 465;
 }
 
 function isWeekendDateTimeLocal(value: string): boolean {
@@ -207,11 +215,13 @@ Deno.serve(async (req: Request) => {
     // --- SMTP secrets from Supabase dashboard ---
     const smtpHost = Deno.env.get("SMTP_HOST") || "mail.guecyber.com";
     const smtpPort = parseInt(Deno.env.get("SMTP_PORT") || "587", 10);
+    const smtpTlsModeRaw = safe(Deno.env.get("SMTP_TLS_MODE"));
+    const enableBookingSmtp = safe(Deno.env.get("ENABLE_BOOKING_SMTP"), "false").toLowerCase() === "true";
     const smtpUser = Deno.env.get("SMTP_USER") || "";
     const smtpPass = Deno.env.get("SMTP_PASS") || "";
     const toEmail = Deno.env.get("BOOKING_TO_EMAIL") || "gabriel.aloho@guecyber.com";
 
-    if (!smtpUser || !smtpPass) {
+    if (enableBookingSmtp && (!smtpUser || !smtpPass)) {
       return new Response(
         JSON.stringify({ error: "SMTP credentials (SMTP_USER, SMTP_PASS) are not set in Supabase function secrets." }),
         { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
@@ -258,33 +268,79 @@ Deno.serve(async (req: Request) => {
 <p style="margin-top:16px;color:#555;">A calendar invite (.ics) is attached. Open it in Outlook to accept the booking into your calendar.</p>
     `.trim();
 
-    // --- Send via cPanel SMTP ---
-    const client = new SMTPClient({
-      connection: {
-        hostname: smtpHost,
-        port: smtpPort,
-        auth: {
-          username: smtpUser,
-          password: smtpPass,
-        },
-      },
-    });
+    // --- Send via cPanel SMTP (optional) ---
+    let mailSent = false;
+    let mailWarning = "Email delivery is currently disabled for this environment.";
 
-    await client.send({
-      from: smtpUser,
-      to: toEmail,
-      subject: `New Booking: ${fullName} — ${preferredDateTime.replace("T", " ")}`,
-      html: htmlBody,
-      attachments: [
-        {
-          filename: "booking-invite.ics",
-          content: new TextEncoder().encode(icsContent),
-          contentType: "text/calendar; method=REQUEST",
-        },
-      ],
-    });
+    if (enableBookingSmtp) {
+      const smtpTls = normalizeSmtpTlsMode(smtpTlsModeRaw, smtpPort);
+      const primaryTransport = { port: smtpPort, tls: smtpTls };
+      const fallbackTransport = smtpTls ? { port: 587, tls: false } : { port: 465, tls: true };
 
-    await client.close();
+      const sendOptions = {
+        from: smtpUser,
+        to: toEmail,
+        subject: `New Booking: ${fullName} — ${preferredDateTime.replace("T", " ")}`,
+        html: htmlBody,
+        attachments: [
+          {
+            filename: "booking-invite.ics",
+            content: new TextEncoder().encode(icsContent),
+            contentType: "text/calendar; method=REQUEST",
+          },
+        ],
+      };
+
+      const { SMTPClient } = await import("https://deno.land/x/denomailer@1.6.0/mod.ts");
+
+      const sendWithTransport = async (transport: { port: number; tls: boolean }) => {
+        const client = new SMTPClient({
+          connection: {
+            hostname: smtpHost,
+            port: transport.port,
+            tls: transport.tls,
+            auth: {
+              username: smtpUser,
+              password: smtpPass,
+            },
+          },
+        });
+
+        try {
+          await client.send(sendOptions);
+        } finally {
+          try {
+            await client.close();
+          } catch {
+            // Ignore close errors to preserve original send failure.
+          }
+        }
+      };
+
+      try {
+        try {
+          await sendWithTransport(primaryTransport);
+          mailSent = true;
+          mailWarning = "";
+        } catch (firstError) {
+          const firstMessage = firstError instanceof Error ? firstError.message : String(firstError);
+          const protocolError = /invalid cmd|starttls|tls|ssl/i.test(firstMessage);
+          const hasExplicitMode = smtpTlsModeRaw.toLowerCase() === "tls" || smtpTlsModeRaw.toLowerCase() === "starttls";
+
+          if (!protocolError || hasExplicitMode) {
+            throw firstError;
+          }
+
+          await sendWithTransport(fallbackTransport);
+          mailSent = true;
+          mailWarning = "";
+        }
+      } catch (mailError) {
+        const msg = mailError instanceof Error ? mailError.message : String(mailError);
+        mailWarning = `Booking saved, but email delivery failed: ${msg}`;
+        console.error("SMTP send failed", msg);
+      }
+    }
 
     // --- Optionally save to Supabase ---
     const supabaseUrl = Deno.env.get("SUPABASE_URL");
@@ -304,7 +360,7 @@ Deno.serve(async (req: Request) => {
       }]);
     }
 
-    return new Response(JSON.stringify({ ok: true }), {
+    return new Response(JSON.stringify({ ok: true, mailSent, warning: mailWarning || undefined }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });

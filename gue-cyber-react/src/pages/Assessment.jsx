@@ -154,7 +154,13 @@ export default function Assessment() {
       setMessage("");
     } catch (err) {
       const messageText = err instanceof Error ? err.message : "Could not submit your booking. Please try again.";
-      setSubmitError(messageText);
+      if (messageText.includes("Failed to send a request to the Edge Function")) {
+        setSubmitError(
+          "Booking service is unreachable. Redeploy the create-booking-and-calendar Edge Function and verify its secrets/config for this environment.",
+        );
+      } else {
+        setSubmitError(messageText);
+      }
     } finally {
       setSubmitting(false);
     }

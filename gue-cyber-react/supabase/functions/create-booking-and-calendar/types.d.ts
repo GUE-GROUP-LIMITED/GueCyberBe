@@ -8,17 +8,23 @@ declare const Deno: {
 };
 
 declare module "denomailer" {
-  export class SmtpClient {
-    connectTLS(options: {
-      hostname: string;
-      port: number;
-      username: string;
-      password: string;
-    }): Promise<void>;
+  export class SMTPClient {
+    constructor(options: {
+      connection: {
+        hostname: string;
+        port?: number;
+        auth?: {
+          username: string;
+          password: string;
+        };
+        tls?: boolean;
+      };
+    });
     send(options: {
       from: string;
       to: string;
       subject: string;
+      content?: string;
       html?: string;
       attachments?: Array<{
         filename: string;
