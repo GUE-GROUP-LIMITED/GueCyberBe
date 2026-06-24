@@ -6,7 +6,10 @@ export default function MockupLanding() {
     <div className="mockup-landing">
       <nav>
         <a href="#" className="nav-logo nav-logo-image" aria-label="Gue Cyber home">
-          <img src={logo} alt="Gue Cyber" />
+          <span className="logo-mark">
+            <img src={logo} alt="Gue Cyber" />
+          </span>
+          <span className="brand-name">Gue Cyber</span>
         </a>
         <ul className="nav-links">
           <li><a href="#services">Services</a></li>
@@ -219,8 +222,11 @@ export default function MockupLanding() {
       <footer>
         <div className="footer-inner">
           <div className="footer-brand">
-            <a href="#" className="nav-logo nav-logo-image" aria-label="Gue Cyber home">
-              <img src={logo} alt="Gue Cyber" />
+            <a href="#" className="nav-logo nav-logo-image footer-logo" aria-label="Gue Cyber home">
+              <span className="logo-mark">
+                <img src={logo} alt="Gue Cyber" />
+              </span>
+              <span className="brand-name">Gue Cyber</span>
             </a>
             <p>Cybersecurity consultancy for Belgian organisations. vCISO services, NIS2 compliance, penetration testing, and threat intelligence.</p>
             <div className="company-info">

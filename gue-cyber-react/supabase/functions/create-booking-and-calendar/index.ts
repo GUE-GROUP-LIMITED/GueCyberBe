@@ -7,8 +7,10 @@
 //   SMTP_PASS        = <your cPanel email password>
 //   BOOKING_TO_EMAIL = gabriel.aloho@guecyber.com
 
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { SmtpClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
+/// <reference path="./types.d.ts" />
+
+import { createClient } from "@supabase/supabase-js";
+import { SmtpClient } from "denomailer";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -84,7 +86,7 @@ function buildIcs(opts: {
   ].join("\r\n");
 }
 
-Deno.serve(async (req) => {
+Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
   }
