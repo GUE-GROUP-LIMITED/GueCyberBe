@@ -15,6 +15,12 @@
 
 .site-header .nav-logo,
 .site-footer .nav-logo {
+  font-family: "Syne", "Arial Black", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #f5f9ff;
+  letter-spacing: -0.02em;
+  line-height: 1;
   text-decoration: none;
 }
 
@@ -30,14 +36,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background: #ffffff;
   border-radius: 8px;
   padding: 6px 8px;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
 }
 
-.site-header .nav-logo-image img,
-.site-footer .nav-logo-image img {
+.site-header .logo-mark img,
+.site-footer .logo-mark img {
   height: 42px;
   width: auto;
   display: block;
@@ -51,6 +58,11 @@
   color: #f5f9ff;
   letter-spacing: -0.02em;
   line-height: 1;
+}
+
+.site-header .brand-name span,
+.site-footer .brand-name span {
+  color: #00b4d8;
 }
 
 .site-header .nav-links {
@@ -86,6 +98,10 @@
   white-space: nowrap;
 }
 
+.site-header .nav-cta-mobile {
+  display: none;
+}
+
 .site-header .nav-cta:hover {
   background: #00cff5;
 }
@@ -107,6 +123,7 @@
 }
 
 .site-footer .footer-logo {
+  display: inline-flex;
   margin-bottom: 14px;
 }
 
@@ -126,17 +143,6 @@
   font-size: 0.82rem;
   color: #8a9bb0;
   max-width: 260px;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.site-footer .company-info {
-  margin-top: 14px;
-}
-
-.site-footer .company-info p {
-  font-size: 0.82rem;
-  color: #8a9bb0;
   line-height: 1.6;
   margin: 0;
 }
@@ -191,16 +197,44 @@
 }
 
 @media (max-width: 768px) {
+  .site-header nav {
+    padding: 14px 4%;
+  }
+
   .site-header .nav-links {
     display: none;
   }
 
   .site-header .nav-cta {
-    padding: 8px 14px;
-    font-size: 0.78rem;
+    padding: 8px 12px;
+    font-size: 0.72rem;
+  }
+
+  .site-header .nav-logo {
+    font-size: 1.15rem;
+  }
+
+  .site-header .nav-logo-image {
+    gap: 8px;
+  }
+
+  .site-header .logo-mark {
+    padding: 4px 6px;
+  }
+
+  .site-header .logo-mark img {
+    height: 30px;
   }
 
   .site-header .brand-name {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+  }
+
+  .site-header .nav-cta-desktop {
+    display: none;
+  }
+
+  .site-header .nav-cta-mobile {
+    display: inline;
   }
 }

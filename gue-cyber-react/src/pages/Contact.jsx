@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { config } from "../lib/config";
 import { supabase } from "../lib/supabase";
@@ -97,7 +96,6 @@ function getBookingDateTimeError(value) {
 }
 
 export default function Contact() {
-  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -120,19 +118,19 @@ export default function Contact() {
     const nextErrors = {};
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!formData.fullName.trim()) nextErrors.fullName = t('contact.form.fullNameRequired');
-    if (!formData.email.trim()) nextErrors.email = t('contact.form.emailRequired');
+    if (!formData.fullName.trim()) nextErrors.fullName = "Please enter your full name.";
+    if (!formData.email.trim()) nextErrors.email = "Please enter your email address.";
     if (formData.email.trim() && !emailPattern.test(formData.email.trim())) {
-      nextErrors.email = t('contact.form.emailInvalid');
+      nextErrors.email = "Please enter a valid email address.";
     }
-    if (!formData.service) nextErrors.service = t('contact.form.serviceRequired');
+    if (!formData.service) nextErrors.service = "Please select a service.";
     if (!formData.preferredDateTime) nextErrors.preferredDateTime = "Preferred date and time is required.";
     const bookingDateError = getBookingDateTimeError(formData.preferredDateTime);
     if (bookingDateError) {
       nextErrors.preferredDateTime = bookingDateError;
     }
-    if (!formData.message.trim()) nextErrors.message = t('contact.form.messageRequired');
-    if (!formData.consent) nextErrors.consent = t('contact.form.consentRequired');
+    if (!formData.message.trim()) nextErrors.message = "Please include a short message.";
+    if (!formData.consent) nextErrors.consent = "Please agree to the Privacy Policy before submitting.";
 
     setErrors(nextErrors);
     return Object.keys(nextErrors).length === 0;
@@ -167,7 +165,7 @@ export default function Contact() {
         throw new Error(data?.error || error?.message || "Could not submit booking request.");
       }
 
-      setSubmitMessage(t('contact.form.successMessage'));
+      setSubmitMessage("Thanks. Your request has been received. We will contact you shortly.");
       setFormData({
         fullName: "",
         email: "",
@@ -184,21 +182,46 @@ export default function Contact() {
   };
 
   return (
-    <main>
-      <section className="contact-page">
-        <img className="contact-bg" src="/images/contact-waves-bg-lime-half.png" alt="" />
-
+    <>
+      <section className="contact-page contact-hero">
+        <div className="contact-grid"></div>
+        <div className="contact-glow"></div>
         <div className="contact-wrap">
-          <div className="contact-center">
-            <div className="contact-header reveal-up">
-              <h1 className="contact-title">{t('contact.title')}</h1>
-              <p className="contact-subtitle">{t('contact.subtitle')}</p>
+          <div className="contact-copy">
+            <p className="contact-label-kicker">// Contact Gue Cyber</p>
+            <h1>Tell Us What You Need Help With</h1>
+            <p>
+              Use this form if you want to discuss IT support, software development, testing, cloud setup, or a basic
+              security review. If the fastest next step is an assessment, you can also book that directly.
+            </p>
+            <div className="contact-points">
+              <div className="contact-point">
+                <strong>Based in Avelgem, West Flanders</strong>
+                <span>Working with individuals, SMEs, and teams that need direct technical input in Belgium.</span>
+              </div>
+              <div className="contact-point">
+                <strong>Use the form for scoped requests</strong>
+                <span>Include a short summary, your preferred timing, and any existing tools or constraints.</span>
+              </div>
+              <div className="contact-point">
+                <strong>Need a structured first step?</strong>
+                <span>Book a free introductory assessment if you want help clarifying priorities before a project starts.</span>
+              </div>
             </div>
+            <p className="contact-secondary-links">
+              Prefer a direct booking flow? <a href="/assessment">Request an assessment</a>. For product enquiries,
+              you can also ask about <a href="https://insights.guecyber.com" target="_blank" rel="noreferrer">GueInsight</a>.
+            </p>
+          </div>
 
-            <div className="contact-card reveal-up delay-1">
+            <div className="contact-card">
+              <div className="contact-card-head">
+                <h2>Send your request</h2>
+                <p>We will review your message and come back with the most useful next step.</p>
+              </div>
               <form onSubmit={handleSubmit} noValidate>
                 <div className="contact-group">
-                  <label className="contact-label" htmlFor="fullName">{t('contact.fullName')}</label>
+                  <label className="contact-label" htmlFor="fullName">Full Name</label>
                   <input
                     className={`contact-input ${errors.fullName ? "error" : ""}`}
                     type="text"
@@ -211,7 +234,7 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-group">
-                  <label className="contact-label" htmlFor="email">{t('contact.email')}</label>
+                  <label className="contact-label" htmlFor="email">Email</label>
                   <input
                     className={`contact-input ${errors.email ? "error" : ""}`}
                     type="email"
@@ -225,7 +248,7 @@ export default function Contact() {
 
                 <div className="contact-group">
                   <label className="contact-label" htmlFor="company">
-                    <span>{t('contact.company')}</span> <span className="contact-label-muted">({t('contact.company_optional')})</span>
+                    <span>Company</span> <span className="contact-label-muted">(optional)</span>
                   </label>
                   <input
                     className="contact-input"
@@ -238,7 +261,7 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-group">
-                  <label className="contact-label" htmlFor="service">{t('contact.service')}</label>
+                  <label className="contact-label" htmlFor="service">Service Interested In</label>
                   <select
                     className={`contact-select ${errors.service ? "error" : ""}`}
                     id="service"
@@ -246,12 +269,12 @@ export default function Contact() {
                     value={formData.service}
                     onChange={handleChange("service")}
                   >
-                    <option value="">{t('contact.selectService')}</option>
-                    <option value="assessment">{t('contact.assessment')}</option>
-                    <option value="consulting">{t('contact.consulting')}</option>
-                    <option value="itSupport">{t('contact.itSupport')}</option>
-                    <option value="cloud">{t('contact.cloudServices')}</option>
-                    <option value="other">{t('contact.other')}</option>
+                    <option value="">Select a service</option>
+                    <option value="assessment">Security Assessment</option>
+                    <option value="consulting">IT Consultancy</option>
+                    <option value="itSupport">Software Development</option>
+                    <option value="cloud">Cloud and DevOps Support</option>
+                    <option value="other">Other</option>
                   </select>
                   {errors.service ? <p className="contact-error">{errors.service}</p> : null}
                 </div>
@@ -277,14 +300,14 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-group">
-                  <label className="contact-label" htmlFor="message">{t('contact.message')}</label>
-                  <input
-                    className={`contact-input ${errors.message ? "error" : ""}`}
-                    type="text"
+                  <label className="contact-label" htmlFor="message">Message</label>
+                  <textarea
+                    className={`contact-textarea ${errors.message ? "error" : ""}`}
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange("message")}
+                    rows={5}
                   />
                   {errors.message ? <p className="contact-error">{errors.message}</p> : null}
                 </div>
@@ -301,12 +324,12 @@ export default function Contact() {
                       }}
                     />
                     <span>
-                      {t('contact.privacyConsent')}{' '}
-                      <Link to="/privacy">{t('contact.privacyLink')}</Link>.
+                      I agree to the processing of my details and confirm I have read the{' '}
+                      <Link to="/privacy">Privacy Policy</Link>.
                     </span>
                   </label>
                   <p className="contact-consent-note">
-                    {t('contact.privacyNote')}
+                    We use your details only to respond to your request and manage our communication with you.
                   </p>
                   {errors.consent ? <p className="contact-error">{errors.consent}</p> : null}
                 </div>
@@ -314,14 +337,13 @@ export default function Contact() {
                 {submitMessage ? <div className="contact-success">{submitMessage}</div> : null}
 
                 <button type="submit" className="contact-submit">
-                  <span>{t('common.submit')}</span>
+                  <span>Submit Request</span>
                   <span aria-hidden="true">&rarr;</span>
                 </button>
               </form>
             </div>
-          </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

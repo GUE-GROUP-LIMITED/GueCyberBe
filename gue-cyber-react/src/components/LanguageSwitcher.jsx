@@ -3,7 +3,7 @@ import { Box, Menu, MenuItem, Button } from '@mui/material';
 import { useState } from 'react';
 import LanguageIcon from '@mui/icons-material/Language';
 
-export default function LanguageSwitcher({ scrolled, faunaHeroMode, compact = false, buttonSx = {} }) {
+export default function LanguageSwitcher({ faunaHeroMode, compact = false, buttonSx = {} }) {
   const { i18n } = useTranslation();
   const [anchorEl, setAnchorEl] = useState(null);
 

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { config } from "../lib/config";
 import { supabase } from "../lib/supabase";
 import "./Assessment.css";
@@ -96,7 +95,6 @@ function getBookingDateTimeError(value) {
 }
 
 export default function Assessment() {
-  const { t } = useTranslation();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [preferredDateTime, setPreferredDateTime] = useState("");
@@ -167,24 +165,46 @@ export default function Assessment() {
   };
 
   return (
-    <main className="assessment-page">
+    <div className="assessment-page">
       <section className="assessment-hero">
         <div className="assessment-grid"></div>
         <div className="assessment-glow"></div>
         <div className="assessment-wrap">
           <div className="assessment-copy">
             <p className="assessment-label">// Book Your Assessment</p>
-            <h1>{t("assessment.title")}</h1>
-            <p className="assessment-subtitle">{t("assessment.subtitle")}</p>
+            <h1>Free Introductory Security Assessment</h1>
+            <p className="assessment-subtitle">
+              Start with a short, practical review of your current setup. This is designed to surface obvious gaps,
+              clarify priorities, and identify whether you need support with IT operations, software delivery, or
+              security fundamentals.
+            </p>
             <div className="assessment-note">
               We will confirm your preferred slot by email and send a calendar invite.
+            </div>
+            <div className="assessment-details">
+              <div className="assessment-detail-card">
+                <strong>Best for</strong>
+                <span>SMEs, founders, and teams who need a clearer technical or security starting point.</span>
+              </div>
+              <div className="assessment-detail-card">
+                <strong>What we cover</strong>
+                <span>Current pain points, obvious risks, tooling gaps, and the next most useful actions.</span>
+              </div>
+              <div className="assessment-detail-card">
+                <strong>After the call</strong>
+                <span>You leave with a simpler view of priorities and whether a follow-up engagement makes sense.</span>
+              </div>
             </div>
           </div>
 
           <div className="assessment-card">
+            <div className="assessment-card-head">
+              <h2>Request your slot</h2>
+              <p>Tell us when you would like to speak and include any context that will help us prepare.</p>
+            </div>
             {!submitted ? (
               <form onSubmit={handleSubmit} className="assessment-form">
-                <label htmlFor="assessment-name">{t("contact.fullName")}</label>
+                <label htmlFor="assessment-name">Full Name</label>
                 <input
                   id="assessment-name"
                   type="text"
@@ -193,7 +213,7 @@ export default function Assessment() {
                   required
                 />
 
-                <label htmlFor="assessment-email">{t("contact.email")}</label>
+                <label htmlFor="assessment-email">Email</label>
                 <input
                   id="assessment-email"
                   type="email"
@@ -215,7 +235,7 @@ export default function Assessment() {
                   required
                 />
 
-                <label htmlFor="assessment-message">{t("contact.message")}</label>
+                <label htmlFor="assessment-message">What would you like help with?</label>
                 <textarea
                   id="assessment-message"
                   value={message}
@@ -226,18 +246,18 @@ export default function Assessment() {
                 {submitError ? <p className="assessment-error">{submitError}</p> : null}
 
                 <button type="submit" className="assessment-submit" disabled={submitting}>
-                  {submitting ? "Submitting..." : t("assessment.button")}
+                  {submitting ? "Submitting..." : "Request Assessment"}
                 </button>
               </form>
             ) : (
               <div className="assessment-success">
                 <h2>Request Sent</h2>
-                <p>{t("assessment.thanks")}</p>
+                <p>Thanks. Your request has been received. We will contact you shortly to confirm the session.</p>
               </div>
             )}
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

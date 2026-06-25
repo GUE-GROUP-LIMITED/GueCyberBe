@@ -2,36 +2,40 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const SITE_NAME = "Gue Cyber";
-const DEFAULT_TITLE = "Gue Cyber | AI Automation Agency, Software Development, Cybersecurity";
+const DEFAULT_TITLE = "Gue Cyber | IT Consultancy, Software Development, Security Awareness";
 const DEFAULT_DESCRIPTION =
-  "Gue Cyber delivers AI automation agency services, software development, and cybersecurity support to help organizations scale securely.";
+  "Gue Cyber delivers IT consultancy, software development, QA support, cloud setup, and practical security awareness for Belgian organisations and individuals.";
 const DEFAULT_IMAGE = "/img/gue (5).jpg";
 
 const routeMeta = {
   "/": {
-    title: "Gue Cyber | AI Automation Agency, Software Development, Cybersecurity",
+    title: "Gue Cyber | IT Consultancy, Software Development, Security Awareness",
     description:
-      "Gue Cyber provides practical AI automation, software development, and cybersecurity services to help organizations operate securely and efficiently.",
+      "Gue Cyber provides practical IT consultancy, software development, and security awareness services for Belgian SMEs and individuals.",
   },
   "/about": {
     title: "About | Gue Cyber",
     description:
-      "Learn about Gue Cyber, our mission, values, and approach to delivering AI automation, software development, and cybersecurity outcomes.",
+      "Learn about Gue Cyber, the founder-led service model, and the practical approach behind our IT, software, and security work.",
   },
   "/services": {
     title: "Services | Gue Cyber",
     description:
-      "Explore Gue Cyber offerings across AI automation agency services, custom software development, and cybersecurity protection.",
+      "Explore Gue Cyber services across IT consultancy, software development, QA, cloud support, and security awareness.",
   },
   "/contact": {
     title: "Contact | Gue Cyber",
     description:
-      "Contact Gue Cyber to discuss AI automation opportunities, software projects, and cybersecurity priorities.",
+      "Contact Gue Cyber to discuss IT support, software projects, cloud setup, or security assessment needs.",
   },
   "/careers": {
     title: "Careers | Gue Cyber",
     description:
-      "Explore career opportunities at Gue Cyber across AI automation, software development, and cybersecurity delivery.",
+      "Explore career opportunities at Gue Cyber across software development, cloud support, and technical delivery.",
+  },
+  "/assessment": {
+    title: "Assessment | Gue Cyber",
+    description: "Request a free introductory security assessment to identify the most useful next technical or security steps.",
   },
   "/privacy": {
     title: "Privacy Policy | Gue Cyber",
@@ -48,7 +52,7 @@ const routeMeta = {
 };
 
 function upsertMetaByName(name, content) {
-  let tag = document.querySelector(`meta[name=\"${name}\"]`);
+  let tag = document.querySelector(`meta[name="${name}"]`);
   if (!tag) {
     tag = document.createElement("meta");
     tag.setAttribute("name", name);
@@ -58,7 +62,7 @@ function upsertMetaByName(name, content) {
 }
 
 function upsertMetaByProperty(property, content) {
-  let tag = document.querySelector(`meta[property=\"${property}\"]`);
+  let tag = document.querySelector(`meta[property="${property}"]`);
   if (!tag) {
     tag = document.createElement("meta");
     tag.setAttribute("property", property);

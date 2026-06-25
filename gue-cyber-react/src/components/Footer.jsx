@@ -88,7 +88,7 @@ export default function Footer() {
             setNewsletterSuccess(t('footer.form.successMessage'));
             setNewsletterEmail("");
             setNewsletterConsent(false);
-        } catch (error) {
+        } catch {
             setNewsletterError(t('footer.form.submitFailed'));
         } finally {
             setNewsletterSubmitting(false);

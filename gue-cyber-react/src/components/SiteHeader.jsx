@@ -7,20 +7,23 @@ export default function SiteHeader() {
       <nav>
         <a href="/" className="nav-logo nav-logo-image" aria-label="Gue Cyber home">
           <span className="logo-mark">
-            <img src={logo} alt="Gue Cyber" />
+            <img src={logo} alt="" />
           </span>
-          <span className="brand-name">Gue Cyber</span>
+          <span className="brand-name">Gue<span>Cyber</span></span>
         </a>
 
         <ul className="nav-links">
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/#gueinsight">GueInsight</a></li>
-          <li><a href="/#nis2">NIS2</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/services#gueinsight">GueInsight</a></li>
+          <li><a href="/services#nis2">NIS2</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
 
-        <a href="/assessment" className="nav-cta">Book a Security Assessment</a>
+        <a href="/assessment" className="nav-cta">
+          <span className="nav-cta-desktop">Book a Security Assessment</span>
+          <span className="nav-cta-mobile">Book Assessment</span>
+        </a>
       </nav>
     </header>
   );
