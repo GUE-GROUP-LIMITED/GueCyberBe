@@ -13,6 +13,7 @@ export default function SiteFooter() {
             <span className="brand-name">Gue<span>Cyber</span></span>
           </a>
           <p>IT consultancy and technology services for individuals and SMEs in Belgium. Software development, IT support, security awareness, and the GueInsight platform.</p>
+          <p style={{fontSize:'0.78rem', opacity:0.65, marginTop:'8px'}}>Doorniksesteenweg 3 bus B101 · 8580 Avelgem · BE · info@guecyber.com</p>
         </div>
 
         <div className="footer-links">
@@ -47,7 +48,7 @@ export default function SiteFooter() {
       </div>
 
       <div className="footer-bottom">
-        <span>© 2026 Gue Cyber · Zelfstandige (Eenmanszaak) · Avelgem, West Flanders, Belgium</span>
+        <span>© 2026 Gue Cyber · Zelfstandige (Eenmanszaak) · Ondernemingsnummer 1037.163.392 · Avelgem, West Flanders, Belgium</span>
         <span><a href="https://www.guecyber.com" target="_blank" rel="noreferrer">guecyber.com</a></span>
       </div>
     </footer>

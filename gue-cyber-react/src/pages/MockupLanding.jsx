@@ -7,7 +7,7 @@ export default function MockupLanding() {
         <div className="hero-grid"></div>
         <div className="hero-glow"></div>
         <div className="hero-content">
-          <div className="hero-badge">🇧🇪 Zelfstandige · Avelgem, West Flanders · Belgium</div>
+          <div className="hero-badge">🇧🇪 Zelfstandige · KBO 1037.163.392 · Avelgem, Belgium</div>
           <h1>
             <span className="hero-line">Your Cybersecurity</span>
             <span className="hero-line">Partner in <em>Belgium</em></span>
@@ -33,7 +33,7 @@ export default function MockupLanding() {
       <div className="trust-bar">
         <div className="trust-item">
           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-          Zelfstandige (Eenmanszaak) · Belgium
+          Zelfstandige · KBO 1037.163.392 · Belgium
         </div>
         <div className="trust-item">
           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" /></svg>
@@ -55,8 +55,8 @@ export default function MockupLanding() {
 
       <section id="services" className="services-bg">
         <div className="section-label">// What We Do</div>
-        <div className="section-title">Cybersecurity Services<br />Built for Belgian Organisations</div>
-        <p className="section-sub">From practical IT support to software delivery and security awareness, we help small organisations move faster with direct technical support.</p>
+        <div className="section-title">IT &amp; Technology Services<br />Built for Belgian Organisations</div>
+        <p className="section-sub">From IT support and software development to testing, cloud setup, and security awareness — practical technology services for Belgian SMEs and individuals.</p>
         <div className="services-grid">
           <div className="service-card">
             <div className="service-icon">🛡️</div>

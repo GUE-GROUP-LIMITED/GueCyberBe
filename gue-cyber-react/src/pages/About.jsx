@@ -42,7 +42,7 @@ export default function About() {
         <div className="page-glow"></div>
         <div className="page-wrap">
           <div className="page-copy">
-            <div className="hero-badge">🇧🇪 About Gue Cyber · Founder-Led · Belgium</div>
+            <div className="hero-badge">🇧🇪 About Gue Cyber · KBO 1037.163.392 · Avelgem, Belgium</div>
             <h1>Direct, Personal Service From Someone Who Builds</h1>
             <p>
               Gue Cyber is a Belgium-based zelfstandige focused on practical IT consultancy, software development,
@@ -59,7 +59,7 @@ export default function About() {
             <div className="section-label">// Snapshot</div>
             <h2>Gue Cyber today</h2>
             <ul className="page-list">
-              <li><strong>Founded in Belgium</strong>Operating from Avelgem, West Flanders as a one-person business.</li>
+              <li><strong>Registered in Belgium</strong>Zelfstandige (eenmanszaak) registered 1 May 2026. Ondernemingsnummer 1037.163.392. Operated from Doorniksesteenweg 3 bus B101, 8580 Avelgem.</li>
               <li><strong>Cross-functional work</strong>IT support, software delivery, QA, cloud setup, and security guidance.</li>
               <li><strong>Built around clarity</strong>Small teams benefit most from fewer layers and faster communication.</li>
             </ul>
@@ -76,9 +76,9 @@ export default function About() {
         </p>
         <div className="why-grid">
           <div className="why-card">
-            <div className="why-num">2026</div>
-            <div className="why-title">Gue Cyber Belgium</div>
-            <p className="why-desc">Established in Avelgem as a zelfstandige focused on practical digital support and technical delivery.</p>
+            <div className="why-num">01/05/2026</div>
+            <div className="why-title">Officially Registered — KBO 1037.163.392</div>
+            <p className="why-desc">Registered as a zelfstandige (eenmanszaak) via Xerius Ondernemingsloket. Ondernemingsnummer 1037.163.392. NACE: 62100 Software Development · 62200 IT Consultancy · 62900 Other IT services.</p>
           </div>
           <div className="why-card">
             <div className="why-num">MSc</div>
@@ -98,7 +98,7 @@ export default function About() {
         </div>
 
         <div className="about-stats" style={{ marginTop: "56px", maxWidth: "720px" }}>
-          <div className="stat-card"><div className="stat-val">EN/NL</div><strong>Languages</strong><div className="stat-label">Working with English and Dutch-speaking clients in Belgium.</div></div>
+          <div className="stat-card"><div className="stat-val">EN/NL</div><strong>Languages</strong><div className="stat-label">English (native) · Dutch (A2/B1, VDAB certified). Working with clients in both languages.</div></div>
           <div className="stat-card"><div className="stat-val">SME</div><strong>Client fit</strong><div className="stat-label">Built for smaller organisations that need direct, adaptable support.</div></div>
           <div className="stat-card"><div className="stat-val">QA</div><strong>Delivery range</strong><div className="stat-label">From product support and testing through to implementation help.</div></div>
           <div className="stat-card"><div className="stat-val">EU</div><strong>Context</strong><div className="stat-label">Belgium-based with EU regulatory awareness including NIS2 and GDPR basics.</div></div>
